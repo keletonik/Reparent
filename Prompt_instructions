@@ -1,0 +1,512 @@
+# Evidence‑Based Interactive Curriculum & Product Design for an Attachment‑Trauma Learning Web App on Replit
+
+## Executive summary
+
+This report designs a comprehensive, interactive web application (hosted on Replit) that teaches evidence‑based skills and knowledge for healing attachment trauma, anxious attachment, trauma bonding, childhood trauma impacts, self‑love (operationalised as self‑compassion and self‑respect), and building healthy relationships. The core product concept is a **trauma‑informed learning system** (not a substitute for therapy) that combines (a) structured psychoeducation grounded in attachment science and trauma research, (b) skills training from well‑supported modalities (CBT, DBT, attachment‑based approaches, carefully bounded somatic skills), (c) robust safety/ethics and crisis pathways, and (d) measurable progress tracking that aligns with digital health evidence and assurance frameworks (NICE evidence standards, NHS DTAC concepts). citeturn3search3turn0search0turn4search0turn1search32turn18search3
+
+Key evidence anchors:
+- **Trauma‑focused CBT and EMDR** are consistently recommended in authoritative PTSD guidelines (e.g., NICE, WHO, APA/ISTSS contexts). citeturn0search0turn0search2turn3search3  
+- **CBT** has broad meta‑analytic support across disorders, and **therapist‑supported iCBT** often shows effects comparable to face‑to‑face CBT for many conditions—supporting a “digital‑first + stepped care” pattern. citeturn9search14turn9search8turn9search0  
+- **DBT** has strong evidence for emotion dysregulation and suicidal/self‑harm presentations in relevant populations; DBT skills are particularly well‑suited to structured digital practice (diary cards, chain analysis, skills selection). citeturn3search12turn3search17turn3search8  
+- **Trauma bonding** (in abusive relationships) is supported as a construct involving **power imbalance and intermittency** of reward/punishment; the curriculum must explicitly separate “attachment anxiety in normal relationships” from “bonding dynamics in coercion/abuse” and include domestic violence safety planning. citeturn4search3turn4search11turn10search23  
+- Somatic approaches are included in a **bounded, evidence‑aware** way (grounding, breathing, interoception, trauma‑informed movement). For example, trauma‑informed yoga has RCT evidence for PTSD symptom reduction in a specific population. citeturn4search2turn4search30  
+
+Key product decisions:
+- **Safety-first architecture:** clear scope, consent, crisis pathways, and “do‑no‑harm” pacing; no unmoderated peer support by default; no DIY trauma processing that can destabilise users. citeturn4search0turn10search28turn18search0  
+- **Replit‑native deployment:** React frontend + Node backend, using **Replit Deployments** (Autoscale for API) and **Replit Database (PostgreSQL)** for persistence, with **Replit Secrets** for encrypted environment variables and **Replit Auth** (or an alternate auth provider) depending on market fit. citeturn16view2turn16view0turn12search0turn16view1  
+- **Measurable learning outcomes:** the app tracks skill practice, behavioural goals, and optional validated self‑report measures (e.g., ECR‑R for attachment anxiety/avoidance; PHQ‑9/GAD‑7/DASS‑21; ITQ for ICD‑11 PTSD/CPTSD screening logic) with careful disclaimers about non‑diagnostic use. citeturn13search6turn14search6turn14search26turn17search8turn17search2  
+
+A critical requirement is to **critique and map (useful elements only)** from Craig Kenneth and Corey Wayne. Both heavily feature breakup dynamics and “no contact” themes; the app should reframe any potentially manipulative “get your ex back” framing into **boundary‑based recovery, nervous‑system regulation, and detachment from intermittent reinforcement**. citeturn5search0turn5search19turn6search5turn6search12  
+
+## Evidence base and therapeutic methods
+
+### Clinical model framing for the curriculum
+
+The curriculum is built around four interacting systems:
+
+**Attachment system:** Attachment theory proposes that humans rely on attachment figures for safety/comfort, with early relationships shaping internal working models and later relational patterns; adult romantic attachment has been conceptualised as an attachment process (Hazan & Shaver). citeturn2search28turn2search2  
+**Important nuance:** adult attachment is influenced by—but not deterministically fixed by—early caregiving; longitudinal research finds links that can be **weak/inconsistent**, supporting a “change is possible” stance. citeturn13search33turn13search17  
+
+**Trauma and complex trauma:** ICD‑11 Complex PTSD (CPTSD) distinguishes PTSD clusters plus “disturbances in self‑organisation” (DSO: affect dysregulation, negative self‑concept, relationship disturbances). This aligns closely with app goals (emotion regulation + self‑concept + relationships). citeturn14search17turn14search12turn14search0  
+
+**Trauma bonding in abuse:** Traumatic bonding theory emphasises that attachment to an abusive partner can be strengthened by **power imbalance** and **intermittent good/bad treatment**—a pattern that overlaps with behavioural reinforcement dynamics and can mimic anxious attachment while requiring different safety actions. citeturn4search3turn4search11  
+
+**Self‑relating (self‑compassion vs self‑criticism):** “Self‑love” is operationalised as **self‑compassion skills** (kindness, common humanity, mindful awareness), which show beneficial effects across RCT meta‑analyses (e.g., reductions in self‑criticism; improvements in distress outcomes). citeturn8search3turn8search7turn8search23  
+
+### Therapeutic methods to include, with practical bounds for a self‑guided web app
+
+The app should include **skills and psychoeducation** inspired by these modalities, while also enforcing clear limits (what can be taught safely without a clinician).
+
+| Method | Best‑supported uses (relevant to app) | Evidence anchors | What the app can safely deliver | What requires clinician delivery / referral triggers |
+|---|---|---|---|---|
+| CBT | Self‑monitoring, cognitive restructuring, behavioural activation, problem‑solving, anxiety management; trauma‑informed cognitive work (without deep memory processing) | CBT efficacy across conditions (meta‑review); iCBT evidence and equivalence with face‑to‑face when therapist‑supported | Thought records, cognitive distortions training, behavioural experiments (low risk), exposure *planning* (not intensive trauma exposure), relapse prevention toolkits | Complex PTSD with severe dissociation; active suicidality; severe trauma intrusion—refer to trauma‑informed clinician; avoid unsupervised trauma exposure citeturn9search14turn9search8turn9search3 |
+| DBT | Emotion regulation, distress tolerance, interpersonal effectiveness, mindfulness; particularly relevant for anxious attachment spirals and urges to protest/seek reassurance | DBT trials and Cochrane‑level evidence base for BPD contexts; DBT developed for suicidal behaviours | Skills library (STOP, TIPP, opposite action), diary cards, chain analysis, coaching‑style prompts, crisis coping plans | High‑risk self‑harm pattern; severe substance misuse; eating disorder crisis—requires specialist services citeturn3search12turn3search17turn3search8 |
+| EMDR | PTSD trauma processing is guideline‑recommended (for clinician delivery) | Shapiro early EMDR trial; PTSD guidelines include EMDR; EMDRIA policy restricts self‑administration | **Only psychoeducation** about EMDR, readiness concepts, stabilisation skills, referral guidance; *no* DIY bilateral stimulation protocols positioned as EMDR | EMDRIA policy: self‑administration is “strictly forbidden” in EMDRIA policy for EMDR therapy; app should not simulate EMDR sessions citeturn8search0turn0search0turn10search28 |
+| Attachment‑based therapies (incl. EFT‑informed concepts) | Building secure bonding behaviours, repair, expressing needs, responding to bids, reducing protest/withdraw cycles | EFT evidence base incl. RCT/meta‑analytic support; adult attachment theory research | Communication scripts, needs identification, “attachment cycle” mapping, repair sequences, secure‑base priming exercises | Couples in violence/coercion (do not recommend conjoint work); severe relational trauma—refer citeturn8search37turn8search21turn13search0 |
+| Somatic approaches (bounded) | Grounding, interoceptive awareness, tension release, breath regulation; can support affect tolerance | Trauma‑informed yoga RCT; systematic reviews of yoga for PTSD show emerging evidence | Guided grounding audios, paced breathing, body scan with choice points, trauma‑informed movement routines, “window of tolerance” tracking | Users with severe dissociation/panic may need tailored therapy; ensure opt‑out and titration citeturn4search2turn4search30 |
+
+### Digital delivery implications
+
+Digital mental health can expand access but carries **privacy and safety risks**. Empirical research highlights risks from data sharing/practices in mental health apps; therefore the product must implement strict data minimisation and transparent disclosures. citeturn18search0turn18search4turn18search23  
+At the same time, higher‑quality evidence exists for structured, protocol‑based digital treatments (e.g., iCBT), especially when **guided/support‑augmented**, supporting a stepped support model (self‑guided core + optional clinician/coach). citeturn9search8turn4search9turn9search0  
+
+### Content theme analysis of Craig Kenneth and Corey Wayne
+
+**Craig Kenneth (themes worth extracting, with critique):**
+- Frequently frames relationship distress through **attachment styles** (anxious/avoidant dynamics), and uses “no contact” as a behavioural intervention. citeturn5search0turn5search11turn5search19  
+- Useful extract: **normalising separation anxiety**, teaching self‑regulation and reducing pursuit/rumination cycles (these map well to DBT distress tolerance + CBT rumination interruption). citeturn5search7turn5search17  
+- Risk to correct in the app: content aimed at “making your ex feel the power of no contact” can drift into **instrumentalising boundaries as manipulation**, reinforcing anxious attachment and external validation goals. The curriculum should explicitly reframe “no contact” as **self‑protection, nervous‑system stabilisation, and reinforcement reset**, not a tactic to trigger a partner. citeturn5search19turn5search21  
+
+**Corey Wayne (themes worth extracting, with critique):**
+- Strong emphasis on **“no contact”**, “re‑attraction”, negotiation framing, and gendered/polarity language. citeturn6search5turn6search1turn6search12  
+- Useful extract: coaching around **self‑respect, reducing over‑pursuit, and rebuilding a life outside the relationship** can be repurposed into evidence‑based behavioural activation and boundary training. citeturn6search16turn6search2  
+- Risks to correct in the app: certain language (“alpha/beta”, gender stereotypes) and “psychological trigger” framing may promote **inauthentic or coercive strategies** rather than secure, mutual attachment behaviours. The app should replace this with (a) consent‑based communication, (b) emotional responsibility, (c) values‑driven partner selection, and (d) anti‑abuse guardrails. citeturn6search12turn11search0turn4search0  
+
+## Curriculum and content system
+
+### Learning objectives
+
+By completion, a learner should be able to:
+- Identify their attachment patterns (anxious/avoidant tendencies) using validated dimensional framing (e.g., ECR‑R anxiety/avoidance), and explain how these patterns interact with stress and relationship triggers. citeturn13search6turn13search2  
+- Distinguish **anxious attachment activation** from **trauma‑bond dynamics** in abusive/coercive relationships, and select appropriate safety actions. citeturn4search3turn4search11  
+- Practise core regulation skills (DBT distress tolerance/emotion regulation + somatic grounding) to reduce protest behaviours (excess texting, reassurance seeking, rumination spirals). citeturn3search8turn4search0  
+- Apply CBT cognitive restructuring to common attachment‑related distortions (mind reading, catastrophising, abandonment schemas), and run low‑risk behavioural experiments. citeturn9search14turn3search3  
+- Build secure‑attachment behaviours: communicate needs without threat, set boundaries, repair ruptures, and choose partners aligned with safety/values. citeturn8search37turn8search21  
+- Build a sustainable self‑concept via self‑compassion and values‑based commitments, reducing self‑criticism (a key maintenance factor in shame‑driven relationship cycles). citeturn8search3turn8search23  
+
+### Modular curriculum structure
+
+Design two layers:
+
+**Core Path (12 modules, ~48 sessions)** for most users.  
+**Deep‑Dive Library (optional)** for specific needs (breakup recovery, leaving abuse, co‑parenting, dating after trauma, etc.).
+
+Each session is designed as a **20–35 minute interactive lesson**:
+- 5–8 min psychoeducation
+- 10–15 min guided exercise
+- 5–10 min journaling + action plan
+- 3–5 min quiz / reflection check
+- “If you’re activated” grounding sidebar and exit options
+
+#### Core Path module map
+
+| Module | Sessions (examples) | Key exercises (interactive) | Journaling prompts (examples) | Quiz focus | Suggested multimedia |
+|---|---|---|---|---|---|
+| Orientation, safety, and pacing | Scope, consent, “window of tolerance” self‑check, crisis resources | “Activation meter”, safe‑place visualisation, coping menu builder | “What signs tell me I’m outside my window?” | Safety rules comprehension | Short audios (grounding), UI walkthrough |
+| Attachment foundations | Attachment system, anxious/avoidant behaviours, protest vs repair | ECR‑R‑style dimensional self‑reflection (optional), trigger mapping | “My top 5 attachment triggers and what I usually do” | Attachment myths vs facts | Animated diagrams (cycle map) |
+| Childhood experiences and schemas | ACE/relational patterns, “inner working model” concepts | Schema identification cards; compassionate reframe | “What did I learn about love/safety growing up?” | Schema ↔ behaviour matching | Voiceover story examples |
+| Nervous system + trauma basics | Trauma responses, dissociation basics, CPTSD DSO domains | Body signals map; grounding menu; “titration” practice | “My earliest body cues of threat” | Regulation knowledge | Breath pacing, body scan audio |
+| DBT distress tolerance for attachment panic | STOP, TIPP, urge surfing | Interactive “urge wave” timer, crisis kit checklist | “When I panic, the story is… the need is…” | Skills selection | Skill demo videos |
+| DBT emotion regulation | Naming emotions, opposite action, PLEASE basics | Emotion labelling, opposite action planner | “What emotion am I avoiding?” | Emotion functions | Mood heatmap visuals |
+| CBT for anxious attachment thinking traps | Distortions, reappraisal, behavioural experiments | Thought record builder; “evidence for/against” | “If a friend had this thought, what would I say?” | Distortion identification | Micro‑animations of thought loops |
+| Trauma bonding and leaving unsafe dynamics | Power/ control, intermittent reinforcement, safety planning | “Bond vs love” checklist; safety plan prompts | “What keeps me tethered? What are the costs?” | Abuse red flags | Safety resources panel |
+| Self‑compassion and self‑respect | Self‑criticism, shame, compassion practice | Compassionate letter; self‑talk swapper | “Where do I attack myself? What do I need?” | Self‑compassion principles | Guided compassion audio |
+| Boundaries and needs communication | Boundaries, consent, assertiveness | Boundary scripts; “DEAR MAN” style planner (DBT‑aligned) | “My non‑negotiables and why they matter” | Boundary scenarios | Role‑play audio |
+| Secure relating and repair | EFT‑informed cycle mapping; repair sequence | “Cycle de‑escalation” map; repair template | “When we fight, my fear is… my need is…” | Repair steps | Animated repair flow |
+| Integration + relapse prevention | Maintenance plan, habits, future dating/relationship plan | “Secure habits tracker”; relapse plan | “My early relapse signals and what I’ll do” | Scenario planning | Summary video + printable plan |
+
+Evidence notes embedded per module:
+- PTSD/CPTSD content references ICD‑11 distinctions and emphasises that diagnosis requires clinicians; app uses education and optional screening logic only. citeturn14search12turn14search6turn14search17  
+- Trauma bonding module is explicitly tied to traumatic bonding theory and includes safety planning patterns. citeturn4search3turn10search23  
+- Self‑compassion module is grounded in RCT meta‑analysis outcomes on self‑criticism/distress. citeturn8search3turn8search23  
+
+### Content templates
+
+Use a “lesson as data” approach so clinicians/content staff can update without code changes.
+
+```json
+{
+  "moduleId": "dbt-distress-tolerance",
+  "sessionId": "stop-skill-for-attachment-panic",
+  "title": "STOP: Interrupt the Panic Spiral",
+  "estimatedMinutes": 25,
+  "learningObjectives": [
+    "Recognise attachment activation early",
+    "Apply STOP + one grounding strategy",
+    "Choose an action aligned with values, not urges"
+  ],
+  "prerequisites": ["orientation-safety"],
+  "contraindications": [
+    "If you feel at immediate risk of harming yourself or others, use Crisis Mode"
+  ],
+  "segments": [
+    { "type": "psychoeducation", "asset": "video:stop_skill_90s" },
+    { "type": "interactive", "component": "UrgeWaveTimer", "config": { "minutes": 3 } },
+    { "type": "journal", "component": "GuidedJournal", "prompts": ["What is the urge asking for?"] },
+    { "type": "quiz", "component": "MiniQuiz", "items": 5 },
+    { "type": "actionPlan", "component": "CommitmentCard", "config": { "timeHorizonDays": 2 } }
+  ],
+  "downloads": ["pdf:stop_cheatsheet", "audio:2min_grounding"]
+}
+```
+
+### Full sample interactive session
+
+**Session:** “STOP: Interrupt the Anxious Attachment Spiral (Texting Urge)”
+
+**Scenario:** User feels intense urge to text/call/check socials after delayed reply.
+
+**Flow:**
+1) Quick safety check (“Are you safe right now?” + activation meter)  
+2) Psychoeducation: attachment activation ↔ protest behaviour ↔ intermittent reinforcement loop  
+3) STOP skill interactive stepper  
+4) Somatic grounding (paced breathing)  
+5) CBT “thought vs fact” mini‑sheet  
+6) Values‑aligned action plan (choose one behaviour)  
+7) Reflection quiz + reinforcement badge (“Paused the spiral”)
+
+React component structure (pseudocode):
+
+```tsx
+// SessionStopSkill.tsx (pseudo-implementation)
+export function SessionStopSkill() {
+  const { user, sessionState, dispatch } = useSessionStore(); // Zustand/Context
+  const [step, setStep] = useState<0|1|2|3|4|5|6>(0);
+
+  return (
+    <SessionLayout
+      title="STOP: Interrupt the Panic Spiral"
+      safetyBanner={<SafetyBanner onCrisis={() => dispatch({ type: "ENTER_CRISIS_MODE" })} />}
+      progress={<SessionProgress step={step} totalSteps={7} />}
+    >
+      {step === 0 && (
+        <ActivationCheck
+          onSubmit={(activation) => {
+            dispatch({ type: "SET_ACTIVATION", activation });
+            setStep(1);
+          }}
+        />
+      )}
+
+      {step === 1 && (
+        <PsychoeducationCard
+          videoId="stop_skill_90s"
+          keyIdeas={[
+            "Attachment activation narrows attention and drives protest behaviours.",
+            "Pausing interrupts reinforcement loops and creates choice."
+          ]}
+          onNext={() => setStep(2)}
+        />
+      )}
+
+      {step === 2 && (
+        <StopStepper
+          steps={[
+            { label: "S — Stop", prompt: "Put the phone down." },
+            { label: "T — Take a breath", prompt: "Do 6 slow breaths." },
+            { label: "O — Observe", prompt: "Name feelings, body cues, and thoughts." },
+            { label: "P — Proceed", prompt: "Choose a values-aligned action." }
+          ]}
+          onComplete={() => setStep(3)}
+        />
+      )}
+
+      {step === 3 && (
+        <BreathingPacer minutes={2} onDone={() => setStep(4)} />
+      )}
+
+      {step === 4 && (
+        <ThoughtRecordMini
+          fields={["Trigger", "Automatic thought", "Feeling (0–100)", "Evidence for", "Evidence against", "Balanced thought"]}
+          onSave={(record) => dispatch({ type: "SAVE_THOUGHT_RECORD", record })}
+          onNext={() => setStep(5)}
+        />
+      )}
+
+      {step === 5 && (
+        <ActionPlanPicker
+          options={[
+            { id: "delay_texting", label: "Wait 2 hours before messaging" },
+            { id: "reach_friend", label: "Message a friend (support, not reassurance seeking)" },
+            { id: "self_care", label: "Do one grounding activity + short walk" }
+          ]}
+          onCommit={(plan) => {
+            dispatch({ type: "SAVE_ACTION_PLAN", plan });
+            setStep(6);
+          }}
+        />
+      )}
+
+      {step === 6 && (
+        <MiniQuiz
+          items={[
+            { q: "Which part of STOP creates choice?", a: ["Stop", "Observe", "Proceed"], correct: 2 },
+            { q: "True/False: No contact is used to force an ex to return.", a: ["True", "False"], correct: 1 }
+          ]}
+          onFinish={(score) => dispatch({ type: "COMPLETE_SESSION", score })}
+        />
+      )}
+    </SessionLayout>
+  );
+}
+```
+
+This session is explicitly DBT‑aligned (distress tolerance + mindfulness + values‑based action), a strong fit for anxious attachment spirals (emotion dysregulation under perceived abandonment). citeturn3search8turn3search12  
+
+## Safety, ethics, privacy, and clinical governance
+
+### Scope, safety positioning, and “do‑no‑harm” constraints
+
+This product should be positioned as:
+- **Education + skills training**, not psychotherapy or diagnosis.
+- A **stepped resource**: self‑guided learning, with clear encouragement to seek professional help when needed.
+- Explicitly not suitable for acute crises, severe dissociation, or active domestic violence situations without professional support.
+
+Trauma‑informed approach guidance supports safety, empowerment, trustworthiness, and avoiding re‑traumatisation, which must be reflected in pacing, language, and UX choice points. citeturn4search0turn4search28  
+
+### Crisis referral protocol design
+
+**Crisis Mode** must be one action away from anywhere (persistent header button + keyboard shortcut + “quick exit”).
+
+Implement a structured triage flow:
+- **Immediate danger / imminent risk:** instruct user to call emergency services now; show country‑specific emergency number and crisis services.
+- **Suicidal ideation or self‑harm urges without immediate danger:** guide to a safety plan workflow and connect to crisis lines/support.
+- **Domestic violence / coercive control:** show DV‑specific support resources and safety planning tips (including device privacy considerations and quick exit).
+
+Evidence‑based safety planning:
+- The **Stanley‑Brown Safety Planning Intervention** is a brief, collaborative intervention designed to mitigate acute suicide risk; it can be adapted as an in‑app guided template with clear “this is not a substitute for clinician care” language. citeturn10search19turn10search23turn10search7  
+
+Minimum crisis contacts (example defaults; app should localise by country):
+- Australia: Lifeline offers 24/7 crisis support by phone **13 11 14**. citeturn19search0turn19search6  
+- UK & Ireland: Samaritans can be reached free by calling **116 123**. citeturn19search1turn19search4turn19search7  
+- United States: **988 Suicide & Crisis Lifeline** provides free, confidential support via call/text/chat. citeturn19search2turn19search17  
+
+### Consent and privacy architecture
+
+Because journaling, trauma history, and symptom tracking can be **highly sensitive**, privacy must be “default‑private”:
+
+- **Explicit consent layers:** separate consent for (a) account creation, (b) storing journal text on servers, (c) using de‑identified analytics, (d) contacting support/coach, (e) optional research participation.
+- **Data minimisation:** store only what is required for functionality; prefer on‑device storage for free‑text journaling unless the user opts into cloud sync.
+- **Transparency:** clear privacy notices explaining what is collected, why, and retention periods.
+
+Regulatory anchors (practical design implications):
+- Under UK GDPR approaches, health data is “special category” and typically requires additional conditions (beyond general lawful basis) and high‑risk processing controls (e.g., DPIA). citeturn1search33turn1search29  
+- In Australia, OAIC guidance and APPs emphasise transparent handling and special care for sensitive/health information (consent, purpose limitation). citeturn1search30turn1search34  
+- NHS DTAC provides a useful “minimum baseline” framing across clinical safety, data protection, technical security, interoperability, and usability/accessibility—even if you’re not selling into the NHS on day one. citeturn18search3turn18search7  
+
+### Content moderation and clinician oversight model
+
+Even without a community forum, the app still needs governance because:
+- Users may enter self‑harm content in journals.
+- Users may request coaching.
+- Any AI‑assisted features can generate risky outputs.
+
+Recommended oversight model (tiered):
+- **Tier A: Self‑guided only (default).** No human review. Journals local by default. App runs automated on‑device checks for crisis keywords and shows crisis resources (no server transmission unless user opts in).
+- **Tier B: Coach support (opt‑in).** Asynchronous messages reviewed by trained staff under clinical protocols; strict response SLAs and escalation policies.
+- **Tier C: Clinician network (opt‑in).** Licensed clinicians deliver therapy off‑platform or via integrated scheduling; the app provides summaries/export with user consent.
+
+Guardrails for EMDR:
+- The app must not provide DIY EMDR sessions. EMDRIA virtual delivery guidance explicitly excludes self‑therapy offerings and states self‑administration is forbidden in EMDRIA policy. citeturn10search28turn10search1  
+
+## Product UX/UI and interaction design in React
+
+### Core user flow
+
+```mermaid
+flowchart TD
+  A[Landing] --> B[Scope + Not a substitute for therapy]
+  B --> C[Consent & Privacy Choices]
+  C --> D[Onboarding: goals + safety check]
+  D --> E[Optional Assessments<br/>ECR-R, PHQ-9, GAD-7, ITQ]
+  E --> F[Personalised Learning Plan]
+  F --> G[Module Session Player]
+  G --> H[Exercise + Journal + Quiz]
+  H --> I[Progress Dashboard]
+  I --> G
+  G --> J{User in crisis?}
+  J -->|Yes| K[Crisis Mode<br/>Safety Plan + Hotlines]
+  J -->|No| L[Next Session Recommendation]
+```
+
+Assessment instruments referenced should be optional and clearly framed as “self‑tracking”:
+- ECR‑R measures attachment anxiety/avoidance dimensions. citeturn13search6turn13search2  
+- PHQ‑9 is a validated depression severity measure (commercial use may require licensing—handle carefully). citeturn14search26turn14search3  
+- GAD‑7 is validated for screening/severity of generalised anxiety. citeturn17search8turn17search0  
+- ITQ is designed for ICD‑11 PTSD/CPTSD self‑report screening and is described as free/public‑domain by the VA’s National Center for PTSD. citeturn14search18turn14search6  
+
+### React component inventory
+
+Design the UI as a reusable learning platform:
+
+Core layout:
+- `AppShell`, `TopNav`, `SideNav` (desktop), `BottomNav` (mobile)
+- `SafetyBanner` (persistent), `CrisisButton`, `QuickExit`
+
+Learning delivery:
+- `ModuleOverviewCard`, `SessionPlayer`, `SegmentRenderer`
+- `PsychoeducationCard` (text + audio/video)
+- `InteractiveExerciseFrame` (timer, sliders, cards, scenario chooser)
+- `GuidedJournal` (prompted journaling), `JournalPrivacyToggle`
+- `MiniQuiz`, `KnowledgeCheck`, `ReflectionCheck`
+
+Progress:
+- `StreakWidget`, `SkillTree`, `BadgeShelf`
+- `MetricsDashboard` (symptoms, skills, relationship goals)
+- `GoalPlanner`, `HabitTracker`
+
+Support:
+- `ResourceLibrary`, `ReferralPanel` (localised)
+- `CoachInbox` (if enabled), `ReportConcern`
+
+### State flows
+
+Keep state management explicit and auditable (important for safety features):
+- **Client state:** onboarding status, UI preferences, crisis‑mode state, local journal drafts.
+- **Server state:** user profile, consent records, module/session completion, quiz attempts, anonymised analytics events.
+
+Recommended pattern:
+- `react-router` for routing
+- `TanStack Query` for server state
+- `Zustand` or `useReducer + Context` for UI/session state
+- Strict schema validation at boundaries (zod) to prevent unsafe payloads (aligns with “insecure design” and injection risk mitigation). citeturn11search0turn16view0  
+
+### Accessibility and responsive design
+
+- Target WCAG 2.2 AA as a baseline: clear focus states, no drag‑only interactions, accessible authentication flows, consistent help patterns. citeturn11search27turn11search3turn11search15  
+- Trauma‑informed UI: reduce startling motion, allow content warnings, provide “pause/skip” for emotional content, and avoid red “alarm” visuals unless in crisis mode (choice + control). citeturn4search0turn4search28  
+
+## Technical architecture for Replit deployment
+
+### Recommended Replit‑native stack
+
+**Frontend:** React (Vite) + TypeScript  
+**Backend:** Node.js (Fastify or Express) + TypeScript  
+**Database:** Replit Database (PostgreSQL)  
+**Auth:** Replit Auth (or external OAuth provider if non‑Replit accounts are required)  
+**Deployments:** Autoscale Deployment for API/web app; optional Static Deployment for marketing site  
+
+Replit‑specific primitives:
+- Replit Deployments run on Replit’s cloud infra backed by GCP; Replit notes published apps are hosted in the United States, and Replit also documents an optional India hosting region for opted‑in users at the platform level. citeturn12search2turn16view3  
+- Replit Database is a built‑in SQL database; documentation explicitly references PostgreSQL integration and environment variables (e.g., `DATABASE_URL`). citeturn16view0turn12search1  
+- Replit Secrets encrypts sensitive values and exposes them as environment variables (avoid hard‑coding). citeturn12search0  
+- Autoscale Deployments scale instances up/down based on traffic and can scale to zero when idle (cost control). citeturn16view2  
+
+### Replit security posture and what you still must do
+
+Replit documents:
+- TLS 1.2+ for data in transit and AES‑256 server‑side encryption at rest (GCP), plus database encryption/key management via Google Cloud SQL. citeturn16view3  
+Even with that, you must still implement app‑level controls:
+- Threat model to OWASP Top 10: broken access control, injection, security misconfiguration, logging/monitoring. citeturn11search0  
+- Server‑side auth checks on every sensitive route (Replit Auth documentation explicitly recommends server‑side validation). citeturn16view1  
+- Audit logging for clinical‑risk events (crisis mode activation, referral clicks) with privacy‑preserving design.
+
+### Tech stack trade‑off table
+
+| Option | Pros | Cons | Best for |
+|---|---|---|---|
+| Replit‑native full‑stack (React SPA + Node API + Replit Database + Replit Auth) | Fastest path on Replit; built‑in DB + secrets; integrated deployments | Replit Auth integration is Agent‑driven; hosting region constraints; potential vendor lock‑in | MVP → V1 on Replit citeturn16view0turn16view1turn16view2 |
+| Next.js full‑stack on Replit | SSR/SEO, API routes, unified repo | More complexity; careful caching and auth required | Content‑heavy public site plus app |
+| React + External BaaS (Supabase/Firebase) on Replit | Potentially easier cross‑platform auth; portable infra | More configuration; extra data processors; more privacy/legal surface area | If you need non‑Replit identity from day 1 citeturn18search0turn18search4 |
+
+## Gamification, personalisation, analytics, and metrics
+
+### Gamification design principles
+
+Gamification should reinforce **secure behaviours and self‑regulation**, not “winning” a partner or manipulating an ex.
+
+Mechanics:
+- **Skill streaks** (but with “streak forgiveness” to avoid shame spirals)
+- **Badges** for behaviours: “Paused the urge”, “Set a boundary”, “Did a repair attempt”
+- **Skill tree**: unlock advanced modules after completing stabilisation modules
+- **Micro‑quests**: low‑risk exposures (e.g., “wait 30 minutes before reassurance seeking”)
+
+### Personalisation algorithms (safe, non‑diagnostic)
+
+Use a transparent rules‑first approach:
+- Inputs: user goals, self‑rated activation patterns, optional ECR‑R dimensions, and completion data.
+- Outputs: recommended next sessions, difficulty pacing, and reminders.
+
+Example rules:
+- High attachment anxiety + high activation frequency → prioritise DBT distress tolerance + rumination interruption sessions.
+- “Trauma bond risk” flagged (user endorses power imbalance + intermittent reinforcement cues) → prioritise safety education + resources + boundary planning; suppress “couples repair” content until safety is confirmed. citeturn4search3turn4search11turn4search0  
+
+If using ML later, align with digital health recommendations emphasising assessment of risks/harms and evidence‑based implementation considerations. citeturn18search2turn18search13  
+
+### Metrics that matter
+
+Product metrics (business + engagement):
+- Activation: % completing onboarding + first session
+- Retention: D7/D30 returning users
+- Completion: module completion & exercise completion rates
+- Safety: crisis mode activations, referral clicks, time‑to‑resource
+
+Outcome metrics (optional, user‑owned):
+- Attachment: ECR‑R anxiety/avoidance trend (dimensional, non‑diagnostic). citeturn13search6turn13search2  
+- Distress: PHQ‑9 (licence considerations), GAD‑7, DASS‑21. citeturn17search8turn17search2  
+- Trauma: ITQ for ICD‑11 PTSD/CPTSD screening logic, framed as “talk to a clinician”. citeturn14search18turn14search6  
+- Relationship satisfaction (if partnered): RAS (Relationship Assessment Scale). citeturn17search7turn17search15  
+
+Evidence and quality caution:
+- Research continues to show mixed quality across mental health apps and concerns about privacy; you should plan for continuous evaluation, not just launch‑and‑forget. citeturn18search20turn18search0turn18search23  
+
+## Market landscape, monetisation, and delivery roadmap
+
+### Competitor landscape
+
+This product sits between (a) couples/relationship apps and (b) trauma/mental health self‑management apps.
+
+Representative competitors and what to learn (not to copy blindly):
+- **Paired**: daily questions/quizzes, “expert‑led” relationship content; strong habit formation mechanics. citeturn7search28turn7search32turn7search12  
+- **Lasting**: structured sessions across communication/conflict/emotional connection; explicitly frames itself as an online relationship health program (not necessarily therapy). citeturn7search33turn7search17turn7search1  
+- **Relish**: personalised plans, interactive lessons; some positioning around coaching access. citeturn7search6turn7search22  
+- **PTSD Coach (VA/DoD)**: strong model for trauma education, symptom tools, tracking, and direct links to support; importantly includes disclaimers that PTSD often requires professional evaluation/treatment. citeturn7search3turn7search15turn7search31  
+
+Gap/opportunity:
+- Most couples apps focus on relationship communication and bonding, not **attachment trauma + trauma bonds + childhood trauma impacts** as an integrated, safety‑governed curriculum.
+- Most trauma apps focus on symptom coping, not relational attachment skill building.
+
+### Monetisation options
+
+Monetisation is viable but must not create perverse incentives (e.g., locking crisis resources behind paywalls).
+
+Recommended model:
+- **Free tier:** onboarding, safety tools, crisis resources, stabilisation modules, limited journaling.
+- **Premium individual:** full curriculum, personalisation, deeper analytics, downloadable workbooks.
+- **Premium+ coaching:** asynchronous coach messaging (clear scope; not crisis).
+- **B2B partnerships:** EAPs, universities, workplace wellbeing programs; align to DTAC/NICE evidence expectations if selling into health systems. citeturn18search3turn1search32  
+
+### Project roadmap, milestones, and resourcing
+
+Assume a reference plan (adjustable) with parallel content + engineering.
+
+```mermaid
+gantt
+  title Reference roadmap (starting 2026-03)
+  dateFormat  YYYY-MM-DD
+  section Discovery & clinical design
+  Evidence synthesis + risk model        :a1, 2026-03-01, 21d
+  Curriculum blueprint + content templates:a2, after a1, 28d
+  section MVP build (Replit)
+  Core platform (auth/db/session player) :b1, after a2, 35d
+  12-module core content (v1)            :b2, after a2, 49d
+  Safety + crisis mode + logging         :b3, after b1, 21d
+  section Beta & evaluation
+  Private beta + usability testing       :c1, after b2, 21d
+  Clinical review + red-team safety pass :c2, after b3, 21d
+  section Launch
+  Public launch + monitoring             :d1, after c1, 14d
+  Iteration + outcomes evaluation        :d2, after d1, 42d
+```
+
+Estimated effort / resource table (role‑based, indicative)
+
+| Role | Primary responsibilities | Typical load |
+|---|---|---|
+| Clinical lead (licensed) | Curriculum safety review, contraindications, crisis protocols, clinician training | 0.3–0.6 FTE through build; ongoing governance citeturn4search0turn10search23 |
+| Content designers (2) | Session scripts, exercises, quizzes, multimedia briefs | 1–2 FTE during content sprint |
+| Frontend engineer (1–2) | React app shell, session player, accessibility (WCAG 2.2 AA) | 1–2 FTE citeturn11search27turn11search3 |
+| Backend engineer (1) | API, DB schema, auth integration, audit logging | 1 FTE citeturn16view0turn16view1 |
+| Security/privacy lead | DPIA‑style assessment, data minimisation, threat model, incident plan | 0.2–0.5 FTE citeturn18search0turn11search0turn11search1 |
+| QA + user research | Trauma‑informed usability testing, bug bashes, content comprehension | 0.5–1 FTE during beta |
+| Coach ops (optional) | Support workflows, escalation, moderation | scales with user base |
+
+### Feature trade‑offs table (high‑impact decisions)
+
+| Decision | Option A | Option B | Recommendation |
+|---|---|---|---|
+| Journaling storage | Local‑only (private by default) | Cloud sync | Default local; offer opt‑in cloud with explicit consent due to privacy risks in mental health apps citeturn18search0turn18search4turn1search33 |
+| Community features | None (solo learning) | Forums / groups | Avoid at launch (moderation/safety burden); add later with clinician governance |
+| AI “coach” | Rule‑based guidance | LLM chatbot | Start rule‑based; if LLM later, must add strong safety eval + limitation messaging (chatbots have known crisis‑handling risks) citeturn18news55turn18search20 |
+| Auth | Replit Auth | External auth (OAuth/BaaS) | If target users are general public, consider external auth; if Replit‑centric MVP, Replit Auth is fastest citeturn16view1turn12search19 |
+| Trauma processing | Education + stabilisation | DIY trauma processing | Do not deliver DIY EMDR or intense exposure; EMDR self‑administration forbidden in EMDRIA policy; prioritise referrals citeturn10search28turn0search0turn3search3 |
