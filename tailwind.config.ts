@@ -63,8 +63,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-merriweather)', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Lora', 'Georgia', 'serif'],
       },
       animation: {
         'breathe': 'breathe 8s ease-in-out infinite',
