@@ -318,22 +318,22 @@ export const modules: Module[] = [
               sections: [
                 {
                   heading: 'Why We Attach',
-                  text: 'Humans are wired for connection. From birth, we rely on caregivers for safety, comfort, and survival. This is not weakness — it is biology. The attachment system evolved to keep us close to people who can protect and support us.',
+                  text: 'Humans are wired for connection. John Bowlby, the founder of attachment theory, showed that from birth we rely on caregivers for safety, comfort, and survival. This is not weakness — it is biology. The attachment system evolved to keep us close to people who can protect and support us. Mary Ainsworth\'s Strange Situation research confirmed that the quality of this early bond shapes how we relate to others throughout life.',
                 },
                 {
                   heading: 'Attachment Is Dimensional, Not Categorical',
-                  text: 'Modern research shows attachment is best understood on two dimensions: attachment anxiety (fear of abandonment, need for reassurance) and attachment avoidance (discomfort with closeness, preference for independence). Everyone falls somewhere on each dimension — it is not a fixed "type".',
+                  text: 'Researchers Brennan, Clark, and Shaver (1998) demonstrated that adult attachment is best understood on two dimensions: attachment anxiety (fear of abandonment, need for reassurance) and attachment avoidance (discomfort with closeness, preference for independence). Everyone falls somewhere on each dimension — it is not a fixed "type".',
                   keyIdeas: [
                     'High anxiety + low avoidance = anxious-preoccupied tendencies',
                     'Low anxiety + high avoidance = dismissive tendencies',
-                    'High anxiety + high avoidance = fearful-avoidant tendencies',
+                    'High anxiety + high avoidance = fearful-avoidant (disorganised) tendencies',
                     'Low anxiety + low avoidance = secure tendencies',
                     'These patterns can shift with awareness and practice',
                   ],
                 },
                 {
                   heading: 'Change Is Possible',
-                  text: 'While early experiences shape our initial patterns, longitudinal research shows that attachment can change throughout life. Therapy, healthy relationships, and intentional skill practice can all move someone toward greater security.',
+                  text: 'While early experiences shape our initial patterns, longitudinal research (including the Minnesota Study of Risk and Adaptation) shows that attachment can change throughout life. What researchers call "earned security" — developing secure attachment despite insecure beginnings — is well-documented. Therapy, healthy relationships, and intentional skill practice can all move someone toward greater security.',
                 },
               ],
             },
@@ -581,9 +581,9 @@ export const modules: Module[] = [
           {
             id: 'tr-psychoed', type: 'psychoeducation', title: 'The Four Trauma Responses', estimatedMinutes: 8,
             content: { type: 'psychoeducation', sections: [
-              { heading: 'Your Body\'s Protection System', text: 'When your nervous system perceives threat, it activates survival responses. These are not conscious choices — they are automatic protective reactions. In relationships, these responses can be triggered by perceived abandonment, criticism, or conflict.' },
-              { heading: 'Fight, Flight, Freeze, Fawn', text: 'Fight: arguing, criticising, becoming controlling. Flight: leaving, avoiding, distracting, over-working. Freeze: shutting down, going numb, dissociating. Fawn: people-pleasing, abandoning your own needs, over-accommodating to avoid conflict.', keyIdeas: ['These responses kept you safe at some point', 'They become problematic when they fire in safe situations', 'Recognising your default response is the first step to changing it', 'You may use different responses in different contexts'] },
-              { heading: 'CPTSD and Ongoing Trauma', text: 'ICD-11 recognises Complex PTSD, which includes PTSD symptoms plus disturbances in emotion regulation, self-concept, and relationships. This is particularly relevant for those who experienced ongoing childhood trauma. If this resonates strongly, professional support from a trauma-informed clinician is recommended.' },
+              { heading: 'Your Body\'s Protection System', text: 'Stephen Porges\' Polyvagal Theory explains how your nervous system has three states: ventral vagal (safe and social), sympathetic (fight or flight), and dorsal vagal (freeze/shutdown). When your nervous system perceives threat, it shifts states automatically. These are not conscious choices — they are protective reactions. In relationships, these responses can be triggered by perceived abandonment, criticism, or conflict.' },
+              { heading: 'Fight, Flight, Freeze, Fawn', text: 'Pete Walker, author of Complex PTSD: From Surviving to Thriving, identified four trauma responses. Fight: arguing, criticising, becoming controlling. Flight: leaving, avoiding, distracting, over-working. Freeze: shutting down, going numb, dissociating. Fawn: people-pleasing, abandoning your own needs, over-accommodating to avoid conflict.', keyIdeas: ['These responses kept you safe at some point', 'They become problematic when they fire in safe situations', 'Recognising your default response is the first step to changing it', 'You may use different responses in different contexts'] },
+              { heading: 'CPTSD and Ongoing Trauma', text: 'The World Health Organisation\'s ICD-11 recognises Complex PTSD, which includes PTSD symptoms plus disturbances in emotion regulation, self-concept, and relationships. This is particularly relevant for those who experienced ongoing childhood trauma, as described by Judith Herman in Trauma and Recovery. If this resonates strongly, professional support from a trauma-informed clinician is recommended.' },
             ] },
           },
           {
@@ -903,8 +903,8 @@ export const modules: Module[] = [
         segments: [
           { id: 'ic-safety', type: 'safety-check', title: 'Check-In', estimatedMinutes: 2, content: { type: 'safety-check', question: 'How are you feeling?', options: [{ label: 'Calm', value: 1 }, { label: 'Slightly uneasy', value: 3 }, { label: 'Activated', value: 5 }, { label: 'Distressed', value: 7 }, { label: 'Very distressed', value: 9 }] } },
           { id: 'ic-psychoed', type: 'psychoeducation', title: 'Self-Compassion, Not Self-Esteem', estimatedMinutes: 7, content: { type: 'psychoeducation', sections: [
-            { heading: 'The Problem with Self-Criticism', text: 'Self-criticism feels productive but actually maintains shame, anxiety, and unhealthy relationship patterns. When you attack yourself ("I am too needy," "I am unlovable"), you reinforce the very beliefs that drive anxious attachment.' },
-            { heading: 'Three Components of Self-Compassion', text: 'Self-Kindness: Treating yourself as you would treat a good friend. Common Humanity: Remembering that suffering and imperfection are shared human experiences. Mindful Awareness: Holding difficult feelings with balance rather than over-identifying with them.', keyIdeas: ['Self-compassion is not self-pity', 'It is not letting yourself off the hook', 'Research shows it reduces self-criticism and improves distress outcomes', 'It is a skill that strengthens with practice'] },
+            { heading: 'The Problem with Self-Criticism', text: 'Self-criticism feels productive but actually maintains shame, anxiety, and unhealthy relationship patterns. When you attack yourself ("I am too needy," "I am unlovable"), you reinforce the very beliefs that drive anxious attachment. Research by Dr Paul Gilbert shows that self-criticism activates the brain\'s threat system, keeping you in a state of fight-or-flight.' },
+            { heading: 'Three Components of Self-Compassion', text: 'Dr Kristin Neff\'s research identifies three core components. Self-Kindness: Treating yourself as you would treat a good friend. Common Humanity: Remembering that suffering and imperfection are shared human experiences. Mindful Awareness: Holding difficult feelings with balance rather than over-identifying with them.', keyIdeas: ['Self-compassion is not self-pity — research shows it increases motivation', 'It is not letting yourself off the hook — it increases personal responsibility', 'Over 4,000 studies show it reduces anxiety, depression, and shame', 'It is a skill that strengthens with practice, like a muscle'] },
           ] } },
           { id: 'ic-interactive', type: 'interactive', title: 'Compassionate Letter', estimatedMinutes: 10, content: { type: 'interactive', component: 'CompassionateLetter', config: {}, instructions: 'Write a brief letter to yourself from the perspective of a deeply caring, wise friend who knows everything you have been through.' } },
           { id: 'ic-journal', type: 'journal', title: 'Your Self-Talk', estimatedMinutes: 6, content: { type: 'journal', prompts: ['Where do you attack yourself most harshly? What words do you use?', 'Whose voice does your inner critic sound like?', 'What do you actually need to hear right now?'], privacyNote: 'Private.' } },

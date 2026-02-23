@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import type { Segment, ReflectionContent } from '@/lib/types'
 import { SparklesIcon } from '@/components/ui/Icons'
+import { useAppStore } from '@/lib/store'
+import { generateId } from '@/lib/utils'
 
 export function ReflectionSegment({
   segment,
@@ -13,11 +15,27 @@ export function ReflectionSegment({
 }) {
   const content = segment.content as ReflectionContent
   const [responses, setResponses] = useState<string[]>(content.prompts.map(() => ''))
+  const { addJournalEntry } = useAppStore()
 
   const handleChange = (index: number, value: string) => {
     const newResponses = [...responses]
     newResponses[index] = value
     setResponses(newResponses)
+  }
+
+  const handleComplete = () => {
+    const hasContent = responses.some((r) => r.trim().length > 0)
+    if (hasContent) {
+      addJournalEntry({
+        id: generateId(),
+        sessionId: segment.id,
+        date: new Date().toISOString(),
+        prompts: content.prompts,
+        responses,
+        isPrivate: true,
+      })
+    }
+    onComplete()
   }
 
   return (
@@ -44,7 +62,9 @@ export function ReflectionSegment({
         ))}
       </div>
 
-      <button onClick={onComplete} className="btn-primary mt-6">
+      <p className="text-xs text-calm-500 mt-4">Your reflections will be saved to your private journal.</p>
+
+      <button onClick={handleComplete} className="btn-primary mt-4">
         Complete
       </button>
     </div>
