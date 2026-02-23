@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-brand: 58 137 104;
+    --color-warmth: 216 129 51;
+    --color-calm: 98 125 152;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-warmth-50 text-calm-900 antialiased;
+  }
+
+  /* Reduce motion for trauma-informed design */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500 rounded-sm;
+  }
+
+  /* Skip to content link */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-brand-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl border border-calm-100 shadow-sm;
+  }
+
+  .card-elevated {
+    @apply bg-white rounded-2xl border border-calm-100 shadow-md;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-brand-600 text-white font-medium rounded-xl
+           hover:bg-brand-700 focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2
+           transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-white text-calm-700 font-medium rounded-xl
+           border border-calm-200 hover:bg-calm-50 focus-visible:ring-2 focus-visible:ring-calm-400 focus-visible:ring-offset-2
+           transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-safety {
+    @apply inline-flex items-center justify-center px-4 py-2 bg-safety-600 text-white font-medium rounded-xl
+           hover:bg-safety-700 focus-visible:ring-2 focus-visible:ring-safety-500 focus-visible:ring-offset-2
+           transition-colors;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-4 py-2 text-calm-600 font-medium rounded-xl
+           hover:bg-calm-50 focus-visible:ring-2 focus-visible:ring-calm-400 focus-visible:ring-offset-2
+           transition-colors;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-white border border-calm-200 rounded-xl text-calm-900
+           placeholder:text-calm-400 focus:border-brand-400 focus:ring-2 focus:ring-brand-200
+           transition-colors;
+  }
+
+  .textarea-field {
+    @apply w-full px-4 py-3 bg-white border border-calm-200 rounded-xl text-calm-900
+           placeholder:text-calm-400 focus:border-brand-400 focus:ring-2 focus:ring-brand-200
+           transition-colors resize-none;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .section-heading {
+    @apply text-2xl font-serif font-bold text-calm-900;
+  }
+
+  .content-width {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .page-width {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Breathing animation circle */
+.breathing-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(58, 137, 104, 0.3) 0%, rgba(58, 137, 104, 0.1) 70%, transparent 100%);
+}
+
+/* Progress ring */
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.5s ease;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* Safety quick-exit overlay */
+.quick-exit-active {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: white;
+}
