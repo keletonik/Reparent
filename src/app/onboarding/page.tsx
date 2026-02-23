@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAppStore } from '@/lib/store'
+import { useHydrated } from '@/lib/useHydration'
 import { ChevronRightIcon, ChevronLeftIcon, CheckIcon, ShieldIcon } from '@/components/ui/Icons'
 import { CrisisModal } from '@/components/safety/CrisisModal'
 import { QuickExit } from '@/components/safety/QuickExit'
@@ -20,6 +21,7 @@ const goalOptions = [
 
 export default function OnboardingPage() {
   const router = useRouter()
+  const hydrated = useHydrated()
   const { setGoals, setConsent, completeOnboarding } = useAppStore()
   const [step, setStep] = useState(0)
   const [selectedGoals, setSelectedGoals] = useState<string[]>([])
@@ -43,6 +45,19 @@ export default function OnboardingPage() {
     })
     completeOnboarding()
     router.push('/dashboard')
+  }
+
+  if (!hydrated) {
+    return (
+      <div className="min-h-screen bg-warmth-50 flex items-center justify-center">
+        <div className="text-center animate-fade-in">
+          <div className="w-12 h-12 bg-brand-600 rounded-2xl flex items-center justify-center mx-auto">
+            <span className="text-white font-bold text-lg">R</span>
+          </div>
+          <p className="mt-4 text-calm-500 text-sm">Loading...</p>
+        </div>
+      </div>
+    )
   }
 
   return (

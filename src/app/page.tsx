@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useAppStore } from '@/lib/store'
+import { useHydrated } from '@/lib/useHydration'
 import { ShieldIcon, HeartIcon, BrainIcon, AnchorIcon, CheckIcon, PhoneIcon, SparklesIcon } from '@/components/ui/Icons'
 import { CrisisModal } from '@/components/safety/CrisisModal'
 import { QuickExit } from '@/components/safety/QuickExit'
@@ -27,12 +28,42 @@ const disclaimers = [
 
 export default function LandingPage() {
   const router = useRouter()
+  const hydrated = useHydrated()
   const progress = useAppStore((s) => s.progress)
   const [consentChecked, setConsentChecked] = useState(false)
 
+  useEffect(() => {
+    if (hydrated && progress.onboardingCompleted) {
+      router.push('/dashboard')
+    }
+  }, [hydrated, progress.onboardingCompleted, router])
+
+  // Show a minimal loading state while store hydrates
+  if (!hydrated) {
+    return (
+      <div className="min-h-screen bg-warmth-50 flex items-center justify-center">
+        <div className="text-center animate-fade-in">
+          <div className="w-12 h-12 bg-brand-600 rounded-2xl flex items-center justify-center mx-auto">
+            <span className="text-white font-bold text-lg">R</span>
+          </div>
+          <p className="mt-4 text-calm-500 text-sm">Loading...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Redirect is happening
   if (progress.onboardingCompleted) {
-    router.push('/dashboard')
-    return null
+    return (
+      <div className="min-h-screen bg-warmth-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-12 h-12 bg-brand-600 rounded-2xl flex items-center justify-center mx-auto">
+            <span className="text-white font-bold text-lg">R</span>
+          </div>
+          <p className="mt-4 text-calm-500 text-sm">Loading...</p>
+        </div>
+      </div>
+    )
   }
 
   return (
