@@ -11,8 +11,12 @@ export default function SafetyPlanPage() {
   const safetyPlanCompleted = useAppStore((s) => s.progress.safetyPlanCompleted)
   const [steps, setSteps] = useState<SafetyPlanStep[]>(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('reparent-safety-plan')
-      if (saved) return JSON.parse(saved)
+      try {
+        const saved = localStorage.getItem('reparent-safety-plan')
+        if (saved) return JSON.parse(saved)
+      } catch {
+        // Ignore corrupted data
+      }
     }
     return safetyPlanTemplate
   })

@@ -760,11 +760,134 @@ export const modules: Module[] = [
     ],
   },
   {
+    id: 'codependency-healing',
+    title: 'Healing Codependency',
+    description: 'Understand codependent patterns, reclaim your sense of self, and learn to love without losing yourself. Build interdependence instead of enmeshment.',
+    icon: 'users',
+    order: 9,
+    category: 'skills',
+    prerequisites: ['attachment-foundations'],
+    sessions: [
+      {
+        id: 'codependency-understanding',
+        moduleId: 'codependency-healing',
+        title: 'What Is Codependency?',
+        description: 'Learn what codependency actually is, how it develops, and why it feels like love even when it hurts.',
+        estimatedMinutes: 30,
+        learningObjectives: [
+          'Define codependency and its origins',
+          'Distinguish codependency from healthy caregiving',
+          'Identify personal codependent patterns',
+        ],
+        prerequisites: [],
+        contraindications: ['If you are in a relationship involving domestic violence, please access DV resources first'],
+        segments: [
+          {
+            id: 'cu-safety', type: 'safety-check', title: 'Check-In', estimatedMinutes: 2,
+            content: { type: 'safety-check', question: 'How are you feeling as we explore this topic?', options: [{ label: 'Calm and curious', value: 1 }, { label: 'A little uneasy', value: 3 }, { label: 'Somewhat activated', value: 5 }, { label: 'Quite distressed', value: 7 }, { label: 'Very distressed', value: 9 }] },
+          },
+          {
+            id: 'cu-psychoed', type: 'psychoeducation', title: 'Understanding Codependency', estimatedMinutes: 8,
+            content: { type: 'psychoeducation', sections: [
+              { heading: 'What Codependency Really Means', text: 'Codependency is a pattern where your sense of self, worth, and emotional stability becomes excessively dependent on another person. You organise your life around managing their feelings, fixing their problems, or preventing their disapproval — often at the expense of your own needs, identity, and wellbeing.' },
+              { heading: 'How It Develops', text: 'Codependency typically develops in childhood when a child learns that love is conditional — that they must earn it by being useful, managing a parent\'s emotions, or suppressing their own needs. The child learns: "I am valuable when I am needed." This becomes the template for all future relationships.', keyIdeas: [
+                'Codependency is a learned survival strategy, not a character flaw',
+                'It often develops in families with addiction, mental illness, or emotional neglect',
+                'The "helper" role can feel like identity rather than a choice',
+                'Codependency and anxious attachment frequently overlap',
+              ] },
+              { heading: 'Love vs Codependency', text: 'Healthy love says: "I care about you AND I care about me." Codependency says: "I will abandon myself to keep you." The key difference is whether you can maintain your own identity, boundaries, and needs within the relationship — or whether the relationship requires you to erase them.' },
+            ] },
+          },
+          {
+            id: 'cu-interactive', type: 'interactive', title: 'Codependency Pattern Check', estimatedMinutes: 8,
+            content: { type: 'interactive', component: 'CodependencyReflection', config: {}, instructions: 'Reflect on these common codependent patterns. This is not a diagnosis — it is an invitation to honest self-awareness.' },
+          },
+          {
+            id: 'cu-journal', type: 'journal', title: 'Your Codependency Story', estimatedMinutes: 7,
+            content: { type: 'journal', prompts: [
+              'Do you tend to feel responsible for other people\'s emotions? When did this pattern start?',
+              'What happens to your sense of self when you are not in a relationship or not needed by someone?',
+              'What needs of your own have you been ignoring or minimising?',
+            ], privacyNote: 'These reflections are deeply personal and stored only on your device.' },
+          },
+          {
+            id: 'cu-quiz', type: 'quiz', title: 'Codependency Awareness Check', estimatedMinutes: 3,
+            content: { type: 'quiz', items: [
+              { question: 'Codependency is best described as:', options: ['Being a caring person', 'Organising your life around managing another person at the expense of yourself', 'A personality disorder', 'Being in a relationship'], correctIndex: 1, explanation: 'Codependency is a pattern where your identity and worth become excessively tied to managing another person\'s life and emotions, at the cost of your own needs.' },
+              { question: 'Codependency often develops because:', options: ['You are too kind', 'You learned in childhood that love required you to suppress your own needs', 'You chose the wrong partner', 'You are weak'], correctIndex: 1, explanation: 'Codependency is a learned survival strategy, typically rooted in childhood experiences where love felt conditional on being useful or managing others\' emotions.' },
+            ] },
+          },
+        ],
+      },
+      {
+        id: 'reclaiming-self',
+        moduleId: 'codependency-healing',
+        title: 'Reclaiming Your Self',
+        description: 'Rebuild your identity outside of caretaking roles and learn the difference between interdependence and enmeshment.',
+        estimatedMinutes: 30,
+        learningObjectives: [
+          'Identify where you have lost yourself in relationships',
+          'Understand enmeshment vs interdependence',
+          'Begin rebuilding a sense of self separate from others',
+        ],
+        prerequisites: ['codependency-understanding'],
+        contraindications: [],
+        segments: [
+          {
+            id: 'rs2-safety', type: 'safety-check', title: 'Check-In', estimatedMinutes: 2,
+            content: { type: 'safety-check', question: 'How are you feeling?', options: [{ label: 'Calm', value: 1 }, { label: 'A bit nervous', value: 3 }, { label: 'Somewhat activated', value: 5 }, { label: 'Distressed', value: 7 }, { label: 'Very distressed', value: 9 }] },
+          },
+          {
+            id: 'rs2-psychoed', type: 'psychoeducation', title: 'Enmeshment vs Interdependence', estimatedMinutes: 8,
+            content: { type: 'psychoeducation', sections: [
+              { heading: 'What Is Enmeshment?', text: 'Enmeshment is when the boundaries between you and another person are so blurred that you cannot tell where you end and they begin. Their mood becomes your mood. Their problems become your emergency. Their approval becomes your oxygen. This feels like closeness, but it is actually a loss of self.' },
+              { heading: 'The Interdependence Alternative', text: 'Interdependence means two whole people choosing to share their lives while maintaining their individual identities, needs, and boundaries. You can be close without being consumed. You can love without disappearing.', keyIdeas: [
+                'Enmeshment: "I need you to be okay so I can be okay"',
+                'Interdependence: "I care about your wellbeing AND I am responsible for my own"',
+                'You cannot pour from an empty cup',
+                'Healthy love does not require self-abandonment',
+              ] },
+              { heading: 'Signs You Have Lost Yourself', text: 'You cannot name your own hobbies or interests outside the relationship. You feel guilty when you spend time alone. You automatically defer to the other person\'s preferences. You feel empty or purposeless when they are not around. You monitor their mood to decide how you should feel.' },
+            ] },
+          },
+          {
+            id: 'rs2-breathing', type: 'breathing', title: 'Centering Breath', estimatedMinutes: 3,
+            content: { type: 'breathing', pattern: { inhale: 4, hold: 4, exhale: 6, holdAfter: 2 }, durationSeconds: 120, instruction: 'This breath helps you return to yourself. As you breathe, notice that you are a separate person with your own body, your own breath, your own life.' },
+          },
+          {
+            id: 'rs2-journal', type: 'journal', title: 'Rediscovering You', estimatedMinutes: 8,
+            content: { type: 'journal', prompts: [
+              'Who were you before you started organising your life around others? What did you enjoy?',
+              'What are three things you want, need, or feel right now — without considering anyone else\'s reaction?',
+              'What would your life look like if you gave yourself the same care and attention you give to others?',
+            ], privacyNote: 'Your reflections are private.' },
+          },
+          {
+            id: 'rs2-action', type: 'action-plan', title: 'One Step Back to You', estimatedMinutes: 3,
+            content: { type: 'action-plan', prompt: 'This week, you will take one step toward reclaiming your identity:', options: [
+              { id: 'solo-activity', label: 'Do one activity alone that you enjoy', description: 'Reconnect with your own interests without seeking approval' },
+              { id: 'need-expression', label: 'Express one need without apologising', description: 'Practice stating what you want clearly and without guilt' },
+              { id: 'mood-separation', label: 'Notice when you absorb someone else\'s mood and name it', description: 'Build awareness of emotional enmeshment in real time' },
+            ], timeHorizonDays: 7 },
+          },
+          {
+            id: 'rs2-quiz', type: 'quiz', title: 'Interdependence Check', estimatedMinutes: 3,
+            content: { type: 'quiz', items: [
+              { question: '"I need them to be okay so I can be okay" is an example of:', options: ['Healthy empathy', 'Interdependence', 'Enmeshment', 'Love'], correctIndex: 2, explanation: 'When your emotional state is entirely dependent on another person\'s wellbeing, that is enmeshment — a loss of boundaries between self and other.' },
+              { question: 'The goal of healing codependency is to:', options: ['Stop caring about people', 'Become completely independent and need no one', 'Build interdependence — closeness without self-abandonment', 'Avoid all relationships'], correctIndex: 2, explanation: 'Healing codependency means building interdependence: the ability to maintain your identity, needs, and boundaries while still being close to others.' },
+            ] },
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: 'self-compassion',
     title: 'Self-Compassion & Self-Respect',
     description: 'Build a relationship with yourself based on kindness rather than criticism. Learn to meet shame with compassion.',
     icon: 'flower',
-    order: 9,
+    order: 10,
     category: 'growth',
     prerequisites: ['orientation-safety'],
     sessions: [
@@ -795,7 +918,7 @@ export const modules: Module[] = [
     title: 'Boundaries & Needs Communication',
     description: 'Learn to set healthy boundaries, communicate needs without threats, and practise assertiveness from a place of self-respect.',
     icon: 'fence',
-    order: 10,
+    order: 11,
     category: 'growth',
     prerequisites: ['self-compassion'],
     sessions: [
@@ -826,7 +949,7 @@ export const modules: Module[] = [
     title: 'Secure Relating & Repair',
     description: 'Learn the skills of secure attachment: responding to bids, repairing ruptures, and building trust through consistent, safe behaviour.',
     icon: 'handshake',
-    order: 11,
+    order: 12,
     category: 'growth',
     prerequisites: ['boundaries-communication'],
     sessions: [
@@ -857,7 +980,7 @@ export const modules: Module[] = [
     title: 'Integration & Relapse Prevention',
     description: 'Consolidate everything you have learned, build a maintenance plan, and prepare for challenges ahead.',
     icon: 'compass',
-    order: 12,
+    order: 13,
     category: 'integration',
     prerequisites: ['secure-relating'],
     sessions: [

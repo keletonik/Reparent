@@ -49,7 +49,7 @@ export default function JournalPage() {
                 <div>
                   <p className="text-xs text-calm-400 font-medium">{formatDate(entry.date)}</p>
                   <p className="text-sm font-medium text-calm-900 mt-1">
-                    {entry.prompts[0]}
+                    {entry.prompts?.[0] || 'Journal entry'}
                   </p>
                 </div>
                 <div className={`transform transition-transform ${expandedEntry === entry.id ? 'rotate-90' : ''}`}>
@@ -60,11 +60,11 @@ export default function JournalPage() {
               </button>
               {expandedEntry === entry.id && (
                 <div className="px-5 pb-5 space-y-4 border-t border-calm-100 pt-4">
-                  {entry.prompts.map((prompt, i) => (
+                  {(entry.prompts || []).map((prompt, i) => (
                     <div key={i}>
                       <p className="text-xs font-medium text-calm-500 mb-1">{prompt}</p>
                       <p className="text-sm text-calm-800 whitespace-pre-wrap">
-                        {entry.responses[i] || <span className="text-calm-400 italic">No response</span>}
+                        {entry.responses?.[i] || <span className="text-calm-400 italic">No response</span>}
                       </p>
                     </div>
                   ))}
