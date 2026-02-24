@@ -30,7 +30,7 @@ export default function AdminPage() {
     try {
       const res = await fetch('/api/admin/users')
       if (res.status === 401) {
-        router.push('/login')
+        router.push('/signup')
         return
       }
       const data = await res.json()

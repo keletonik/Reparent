@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server'
 const protectedRoutes = ['/dashboard', '/modules', '/journal', '/progress', '/settings', '/resources', '/safety-plan', '/crisis']
 
 // Routes that are only for non-authenticated users
-const authRoutes = ['/login', '/signup', '/verify-email']
+const authRoutes = ['/signup', '/verify-email']
 
 export function middleware(request: NextRequest) {
   const token = request.cookies.get('auth-token')?.value
@@ -15,11 +15,11 @@ export function middleware(request: NextRequest) {
   const isProtectedRoute = protectedRoutes.some((route) => pathname === route || pathname.startsWith(route + '/'))
   const isAuthRoute = authRoutes.some((route) => pathname === route)
 
-  // If trying to access protected route without auth, redirect to login
+  // If trying to access protected route without auth, redirect to signup
   if (isProtectedRoute && !token) {
-    const loginUrl = new URL('/login', request.url)
-    loginUrl.searchParams.set('redirect', pathname)
-    return NextResponse.redirect(loginUrl)
+    const signupUrl = new URL('/signup', request.url)
+    signupUrl.searchParams.set('redirect', pathname)
+    return NextResponse.redirect(signupUrl)
   }
 
   // If trying to access auth routes while already logged in, redirect to dashboard
