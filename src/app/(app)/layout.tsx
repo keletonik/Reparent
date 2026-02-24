@@ -15,7 +15,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     return (
       <div className="min-h-screen bg-warmth-50 flex items-center justify-center">
         <div className="text-center animate-fade-in">
-          <ReparentLogo size={48} className="mx-auto" />
+          <ReparentLogo size={48} className="mx-auto animate-pulse-gentle" />
           <p className="mt-4 text-calm-500 text-sm">Loading...</p>
         </div>
       </div>
@@ -26,7 +26,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     <>
       <QuickExit />
       <CrisisModal />
-      <div className="flex min-h-screen">
+      <div className="flex min-h-screen bg-mesh-soft">
         <DesktopNav />
         <div className="flex-1 flex flex-col min-h-screen">
           <SafetyBanner />

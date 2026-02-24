@@ -6,7 +6,7 @@ import { ReparentLogo, ReparentWordmark } from '@/components/ui/Icons'
 
 export function TopBar() {
   return (
-    <header className="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-calm-100">
+    <header className="sticky top-0 z-30 bg-white/60 backdrop-blur-md border-b border-calm-100/50">
       <div className="flex items-center justify-between px-4 sm:px-6 py-3">
         <Link href="/" className="flex items-center gap-2 md:hidden">
           <ReparentLogo size={28} />

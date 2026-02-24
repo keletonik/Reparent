@@ -38,53 +38,106 @@
   .skip-link {
     @apply sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-brand-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-calm-200 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-calm-300;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-brand-200/60 text-brand-900;
+  }
 }
 
 @layer components {
+  /* ─── Cards ─── */
   .card {
-    @apply bg-white rounded-2xl border border-calm-100 shadow-sm;
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl border border-calm-100/60 shadow-soft transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply shadow-md border-calm-200/60;
   }
 
   .card-elevated {
-    @apply bg-white rounded-2xl border border-calm-100 shadow-md;
+    @apply bg-white rounded-2xl border border-calm-100/60 shadow-elevated;
   }
 
+  .card-glass {
+    @apply bg-white/40 backdrop-blur-md rounded-2xl border border-white/50 shadow-soft;
+  }
+
+  .card-glow {
+    @apply bg-white rounded-2xl border border-brand-100 shadow-glow-brand transition-all duration-500;
+  }
+
+  .card-glow:hover {
+    @apply shadow-glow-brand border-brand-200;
+  }
+
+  /* ─── Buttons ─── */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-brand-600 text-white font-medium rounded-xl
-           hover:bg-brand-700 focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2
-           transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-brand-600 to-brand-500 text-white font-medium rounded-xl
+           hover:from-brand-700 hover:to-brand-600 focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2
+           transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow-md
+           active:scale-[0.98] transform;
   }
 
   .btn-secondary {
     @apply inline-flex items-center justify-center px-6 py-3 bg-white text-calm-700 font-medium rounded-xl
-           border border-calm-200 hover:bg-calm-50 focus-visible:ring-2 focus-visible:ring-calm-400 focus-visible:ring-offset-2
-           transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+           border border-calm-200 hover:bg-calm-50 hover:border-calm-300 focus-visible:ring-2 focus-visible:ring-calm-400 focus-visible:ring-offset-2
+           transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed
+           active:scale-[0.98] transform;
   }
 
   .btn-safety {
-    @apply inline-flex items-center justify-center px-4 py-2 bg-safety-600 text-white font-medium rounded-xl
-           hover:bg-safety-700 focus-visible:ring-2 focus-visible:ring-safety-500 focus-visible:ring-offset-2
-           transition-colors;
+    @apply inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-safety-600 to-safety-500 text-white font-medium rounded-xl
+           hover:from-safety-700 hover:to-safety-600 focus-visible:ring-2 focus-visible:ring-safety-500 focus-visible:ring-offset-2
+           transition-all duration-300 shadow-sm hover:shadow-md
+           active:scale-[0.98] transform;
   }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center px-4 py-2 text-calm-600 font-medium rounded-xl
            hover:bg-calm-50 focus-visible:ring-2 focus-visible:ring-calm-400 focus-visible:ring-offset-2
-           transition-colors;
+           transition-all duration-300
+           active:scale-[0.98] transform;
   }
 
+  .btn-glow {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-brand-600 via-brand-500 to-warmth-500 text-white font-semibold rounded-2xl
+           hover:shadow-glow-brand focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2
+           transition-all duration-500 shadow-lg hover:shadow-xl
+           active:scale-[0.98] transform text-lg;
+  }
+
+  /* ─── Inputs ─── */
   .input-field {
-    @apply w-full px-4 py-3 bg-white border border-calm-200 rounded-xl text-calm-900
+    @apply w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-calm-200 rounded-xl text-calm-900
            placeholder:text-calm-400 focus:border-brand-400 focus:ring-2 focus:ring-brand-200
-           transition-colors;
+           transition-all duration-300;
   }
 
   .textarea-field {
-    @apply w-full px-4 py-3 bg-white border border-calm-200 rounded-xl text-calm-900
+    @apply w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-calm-200 rounded-xl text-calm-900
            placeholder:text-calm-400 focus:border-brand-400 focus:ring-2 focus:ring-brand-200
-           transition-colors resize-none;
+           transition-all duration-300 resize-none;
   }
 
+  /* ─── Typography ─── */
   .badge {
     @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
   }
@@ -93,6 +146,15 @@
     @apply text-2xl font-serif font-bold text-calm-900;
   }
 
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-600 via-brand-500 to-warmth-500 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-calm {
+    @apply bg-gradient-to-r from-calm-700 to-brand-600 bg-clip-text text-transparent;
+  }
+
+  /* ─── Layout ─── */
   .content-width {
     @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
   }
@@ -100,9 +162,18 @@
   .page-width {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
+  /* ─── Dividers ─── */
+  .divider-gradient {
+    @apply h-px bg-gradient-to-r from-transparent via-calm-200 to-transparent;
+  }
+
+  .divider-glow {
+    @apply h-px bg-gradient-to-r from-transparent via-brand-300 to-transparent;
+  }
 }
 
-/* Breathing animation circle */
+/* ─── Breathing animation circle ─── */
 .breathing-circle {
   width: 200px;
   height: 200px;
@@ -110,17 +181,148 @@
   background: radial-gradient(circle, rgba(58, 137, 104, 0.3) 0%, rgba(58, 137, 104, 0.1) 70%, transparent 100%);
 }
 
-/* Progress ring */
+/* ─── Progress ring ─── */
 .progress-ring-circle {
   transition: stroke-dashoffset 0.5s ease;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
 }
 
-/* Safety quick-exit overlay */
+/* ─── Safety quick-exit overlay ─── */
 .quick-exit-active {
   position: fixed;
   inset: 0;
   z-index: 9999;
   background: white;
+}
+
+/* ─── Mesh gradient backgrounds ─── */
+.bg-mesh-hero {
+  background:
+    radial-gradient(at 30% 20%, rgba(58, 137, 104, 0.08) 0%, transparent 50%),
+    radial-gradient(at 70% 60%, rgba(216, 129, 51, 0.06) 0%, transparent 50%),
+    radial-gradient(at 90% 10%, rgba(98, 125, 152, 0.05) 0%, transparent 50%),
+    radial-gradient(at 10% 80%, rgba(196, 165, 116, 0.06) 0%, transparent 50%);
+}
+
+.bg-mesh-dark {
+  background:
+    radial-gradient(at 20% 30%, rgba(58, 137, 104, 0.15) 0%, transparent 50%),
+    radial-gradient(at 80% 70%, rgba(216, 129, 51, 0.1) 0%, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(16, 42, 67, 0.95) 0%, rgba(10, 25, 41, 1) 100%);
+}
+
+.bg-mesh-soft {
+  background:
+    radial-gradient(at 40% 0%, rgba(58, 137, 104, 0.06) 0%, transparent 50%),
+    radial-gradient(at 80% 100%, rgba(216, 129, 51, 0.04) 0%, transparent 50%);
+}
+
+/* ─── Animated gradient border ─── */
+.gradient-border {
+  position: relative;
+  border-radius: 1rem;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(58, 137, 104, 0.3), rgba(216, 129, 51, 0.3), rgba(98, 125, 152, 0.3));
+  z-index: -1;
+  animation: gradientShift 8s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ─── Orb decorations ─── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.orb-brand {
+  background: rgba(58, 137, 104, 0.15);
+}
+
+.orb-warmth {
+  background: rgba(216, 129, 51, 0.12);
+}
+
+.orb-calm {
+  background: rgba(98, 125, 152, 0.1);
+}
+
+/* ─── Chat styling ─── */
+.chat-bubble-user {
+  @apply bg-brand-50 border border-brand-100 rounded-2xl rounded-br-md;
+}
+
+.chat-bubble-ai {
+  @apply bg-white border border-calm-100 rounded-2xl rounded-bl-md shadow-soft;
+}
+
+/* ─── Typing indicator ─── */
+.typing-dot {
+  @apply w-2 h-2 bg-brand-400 rounded-full;
+  animation: typingBounce 1.4s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
+
+/* ─── Particle background ─── */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* ─── Interactive hover lift ─── */
+.hover-lift {
+  @apply transition-all duration-300;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12);
+}
+
+/* ─── Session type badges ─── */
+.session-badge-guided {
+  @apply bg-brand-50 text-brand-700 border-brand-200;
+}
+
+.session-badge-interactive {
+  @apply bg-warmth-50 text-warmth-700 border-warmth-200;
+}
+
+.session-badge-visualization {
+  @apply bg-aurora-50 text-aurora-700 border-aurora-200;
+}
+
+.session-badge-somatic {
+  @apply bg-rose-50 text-rose-700 border-rose-200;
+}
+
+.session-badge-psychoeducation {
+  @apply bg-calm-50 text-calm-700 border-calm-200;
 }
