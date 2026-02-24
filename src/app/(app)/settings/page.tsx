@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAppStore } from '@/lib/store'
 import { SettingsIcon, ShieldIcon, AlertTriangleIcon } from '@/components/ui/Icons'
+import Link from 'next/link'
 
 export default function SettingsPage() {
   const router = useRouter()
@@ -110,6 +111,28 @@ export default function SettingsPage() {
               Every session includes safety checks and you can pause or exit at any time.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Account */}
+      <section className="card p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <SettingsIcon size={20} className="text-calm-600" />
+          <h2 className="text-lg font-semibold text-calm-900">Account</h2>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/admin" className="btn-secondary text-sm">
+            Admin Dashboard
+          </Link>
+          <button
+            onClick={async () => {
+              await fetch('/api/auth/me', { method: 'DELETE' })
+              window.location.href = '/'
+            }}
+            className="btn-ghost text-sm text-safety-600 hover:bg-safety-50"
+          >
+            Log Out
+          </button>
         </div>
       </section>
 

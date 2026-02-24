@@ -76,13 +76,21 @@ export default function LandingPage() {
               <ReparentLogo size={32} />
               <ReparentWordmark className="text-xl" />
             </div>
-            <button
-              onClick={() => useAppStore.getState().enterCrisisMode()}
-              className="btn-safety gap-2 text-sm"
-            >
-              <PhoneIcon size={16} />
-              <span className="hidden sm:inline">Need Help Now</span>
-            </button>
+            <div className="flex items-center gap-3">
+              <Link href="/login" className="btn-ghost text-sm">
+                Log In
+              </Link>
+              <Link href="/signup" className="btn-primary text-sm py-2">
+                Sign Up
+              </Link>
+              <button
+                onClick={() => useAppStore.getState().enterCrisisMode()}
+                className="btn-safety gap-2 text-sm"
+              >
+                <PhoneIcon size={16} />
+                <span className="hidden sm:inline">Need Help Now</span>
+              </button>
+            </div>
           </div>
         </header>
 
