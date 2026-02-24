@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { HomeIcon, BookOpenIcon, PenIcon, BarChartIcon, SettingsIcon } from '@/components/ui/Icons'
+import { HomeIcon, BookOpenIcon, PenIcon, BarChartIcon, SettingsIcon, ReparentLogo, ReparentWordmark } from '@/components/ui/Icons'
 import { cn } from '@/lib/utils'
 
 const navItems = [
@@ -20,10 +20,8 @@ export function DesktopNav() {
     <nav className="hidden md:flex flex-col w-64 bg-white border-r border-calm-100 min-h-screen" aria-label="Main navigation">
       <div className="p-6">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">R</span>
-          </div>
-          <span className="text-xl font-serif font-bold text-calm-900">Reparent</span>
+          <ReparentLogo size={32} />
+          <ReparentWordmark className="text-xl" />
         </Link>
       </div>
       <div className="flex-1 px-3 space-y-1">

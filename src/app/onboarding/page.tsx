@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAppStore } from '@/lib/store'
 import { useHydrated } from '@/lib/useHydration'
-import { ChevronRightIcon, ChevronLeftIcon, CheckIcon, ShieldIcon } from '@/components/ui/Icons'
+import { ChevronRightIcon, ChevronLeftIcon, CheckIcon, ShieldIcon, ReparentLogo } from '@/components/ui/Icons'
 import { CrisisModal } from '@/components/safety/CrisisModal'
 import { QuickExit } from '@/components/safety/QuickExit'
 
@@ -51,9 +51,7 @@ export default function OnboardingPage() {
     return (
       <div className="min-h-screen bg-warmth-50 flex items-center justify-center">
         <div className="text-center animate-fade-in">
-          <div className="w-12 h-12 bg-brand-600 rounded-2xl flex items-center justify-center mx-auto">
-            <span className="text-white font-bold text-lg">R</span>
-          </div>
+          <ReparentLogo size={48} className="mx-auto" />
           <p className="mt-4 text-calm-500 text-sm">Loading...</p>
         </div>
       </div>

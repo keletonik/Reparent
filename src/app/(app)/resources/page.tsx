@@ -66,6 +66,36 @@ const readingResources = [
     description: 'A practical guide to recovering from Complex PTSD, including the four F trauma responses (fight, flight, freeze, fawn).',
     category: 'Trauma',
   },
+  {
+    title: 'Adult Children of Emotionally Immature Parents',
+    author: 'Lindsay C. Gibson',
+    description: 'How to heal from distant, rejecting, or self-involved parents. Identifies four types of emotionally immature parents and paths to recovery.',
+    category: 'Attachment',
+  },
+  {
+    title: 'No Bad Parts',
+    author: 'Richard C. Schwartz',
+    description: 'The creator of Internal Family Systems (IFS) therapy explains how to heal by befriending all your inner parts — including the ones you wish would go away.',
+    category: 'Trauma',
+  },
+  {
+    title: 'Waking the Tiger',
+    author: 'Peter A. Levine',
+    description: 'The founder of Somatic Experiencing explains how trauma is stored in the body and how to release it through body-based approaches.',
+    category: 'Nervous System',
+  },
+  {
+    title: 'Reinventing Your Life',
+    author: 'Jeffrey E. Young & Janet S. Klosko',
+    description: 'A self-help guide based on Schema Therapy. Identifies 11 common life traps (schemas) and provides step-by-step strategies to break free from them.',
+    category: 'Attachment',
+  },
+  {
+    title: 'Set Boundaries, Find Peace',
+    author: 'Nedra Glover Tawwab',
+    description: 'A licensed therapist\'s guide to identifying, communicating, and maintaining healthy boundaries in every area of life.',
+    category: 'Self-Compassion',
+  },
 ]
 
 const videoResources = [
@@ -131,36 +161,43 @@ const professionalDirectories = [
   {
     country: 'Australia',
     resources: [
-      { name: 'Psychology Today (Australia)', description: 'Find therapists, counsellors, and psychologists' },
-      { name: 'Australian Psychological Society', description: 'Find a psychologist referral service' },
+      { name: 'Psychology Today (Australia)', description: 'Find therapists, counsellors, and psychologists', url: 'https://www.psychologytoday.com/au' },
+      { name: 'Australian Psychological Society', description: 'Find a psychologist referral service', url: 'https://www.psychology.org.au/find-a-psychologist' },
     ],
   },
   {
     country: 'United Kingdom',
     resources: [
-      { name: 'BACP Therapist Directory', description: 'Find a British Association for Counselling and Psychotherapy member' },
-      { name: 'NHS Talking Therapies', description: 'Free NHS-funded psychological therapy' },
+      { name: 'BACP Therapist Directory', description: 'Find a British Association for Counselling and Psychotherapy member', url: 'https://www.bacp.co.uk/search/Therapists' },
+      { name: 'NHS Talking Therapies', description: 'Free NHS-funded psychological therapy', url: 'https://www.nhs.uk/mental-health/talking-therapies-medicine-treatments/talking-therapies-and-counselling/nhs-talking-therapies/' },
     ],
   },
   {
     country: 'United States',
     resources: [
-      { name: 'Psychology Today', description: 'Find therapists, psychiatrists, and treatment centres' },
-      { name: 'SAMHSA Treatment Locator', description: 'Find substance use and mental health treatment' },
+      { name: 'Psychology Today', description: 'Find therapists, psychiatrists, and treatment centres', url: 'https://www.psychologytoday.com/us' },
+      { name: 'SAMHSA Treatment Locator', description: 'Find substance use and mental health treatment', url: 'https://findtreatment.gov' },
     ],
   },
   {
     country: 'Canada',
     resources: [
-      { name: 'Psychology Today (Canada)', description: 'Find therapists and counsellors across Canada' },
-      { name: 'Canadian Mental Health Association', description: 'Local CMHA branches offer programs and support' },
+      { name: 'Psychology Today (Canada)', description: 'Find therapists and counsellors across Canada', url: 'https://www.psychologytoday.com/ca' },
+      { name: 'Canadian Mental Health Association', description: 'Local CMHA branches offer programs and support', url: 'https://cmha.ca' },
     ],
   },
   {
     country: 'New Zealand',
     resources: [
-      { name: 'New Zealand Psychologists Board', description: 'Find a registered psychologist' },
-      { name: 'Supporting Families', description: 'Free support for families affected by mental illness' },
+      { name: 'New Zealand Psychologists Board', description: 'Find a registered psychologist', url: 'https://psychologistsboard.org.nz' },
+      { name: 'Supporting Families', description: 'Free support for families affected by mental illness', url: 'https://www.supportingfamilies.org.nz' },
+    ],
+  },
+  {
+    country: 'Ireland',
+    resources: [
+      { name: 'Psychological Society of Ireland', description: 'Find a chartered psychologist', url: 'https://www.psychologicalsociety.ie/find-a-psychologist' },
+      { name: 'Irish Association for Counselling and Psychotherapy', description: 'Find an accredited therapist', url: 'https://www.iacp.ie/find-a-therapist' },
     ],
   },
 ]
@@ -274,7 +311,13 @@ export default function ResourcesPage() {
               <div className="space-y-3">
                 {dir.resources.map((resource) => (
                   <div key={resource.name}>
-                    <p className="text-sm font-medium text-calm-800">{resource.name}</p>
+                    {resource.url ? (
+                      <a href={resource.url} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-brand-700 hover:text-brand-800 inline-flex items-center gap-1">
+                        {resource.name} <ExternalLinkIcon size={12} />
+                      </a>
+                    ) : (
+                      <p className="text-sm font-medium text-calm-800">{resource.name}</p>
+                    )}
                     <p className="text-xs text-calm-500">{resource.description}</p>
                   </div>
                 ))}
