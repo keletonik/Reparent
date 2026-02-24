@@ -145,35 +145,41 @@ function ThoughtRecord({ onComplete }: { onComplete: () => void }) {
     evidenceFor: '',
     evidenceAgainst: '',
     balanced: '',
+    reRating: '',
   })
 
   return (
     <div className="space-y-4">
       <div>
-        <label className="block text-sm font-medium text-calm-800 mb-1">Trigger / Situation</label>
-        <input className="input-field" placeholder="What happened?" value={fields.trigger} onChange={(e) => setFields({ ...fields, trigger: e.target.value })} />
+        <label className="block text-sm font-medium text-calm-800 mb-1">1. Trigger / Situation</label>
+        <input className="input-field" placeholder="What happened? Be specific about the situation." value={fields.trigger} onChange={(e) => setFields({ ...fields, trigger: e.target.value })} />
       </div>
       <div>
-        <label className="block text-sm font-medium text-calm-800 mb-1">Automatic Thought</label>
-        <input className="input-field" placeholder="What went through your mind?" value={fields.thought} onChange={(e) => setFields({ ...fields, thought: e.target.value })} />
+        <label className="block text-sm font-medium text-calm-800 mb-1">2. Automatic Thought</label>
+        <input className="input-field" placeholder="What went through your mind? (e.g., 'They don't care about me')" value={fields.thought} onChange={(e) => setFields({ ...fields, thought: e.target.value })} />
       </div>
       <div>
-        <label className="block text-sm font-medium text-calm-800 mb-1">Feeling & Intensity (0-100)</label>
-        <input className="input-field" placeholder="e.g., Anxiety 80, Sadness 60" value={fields.feeling} onChange={(e) => setFields({ ...fields, feeling: e.target.value })} />
+        <label className="block text-sm font-medium text-calm-800 mb-1">3. Feeling & Intensity (0-100)</label>
+        <input className="input-field" placeholder="e.g., Anxiety 80, Sadness 60, Anger 40" value={fields.feeling} onChange={(e) => setFields({ ...fields, feeling: e.target.value })} />
       </div>
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-calm-800 mb-1">Evidence For</label>
-          <textarea className="textarea-field" rows={3} placeholder="What supports this thought?" value={fields.evidenceFor} onChange={(e) => setFields({ ...fields, evidenceFor: e.target.value })} />
+          <label className="block text-sm font-medium text-calm-800 mb-1">4. Evidence For This Thought</label>
+          <textarea className="textarea-field" rows={3} placeholder="What facts support this thought? (Not feelings — actual evidence)" value={fields.evidenceFor} onChange={(e) => setFields({ ...fields, evidenceFor: e.target.value })} />
         </div>
         <div>
-          <label className="block text-sm font-medium text-calm-800 mb-1">Evidence Against</label>
-          <textarea className="textarea-field" rows={3} placeholder="What contradicts this thought?" value={fields.evidenceAgainst} onChange={(e) => setFields({ ...fields, evidenceAgainst: e.target.value })} />
+          <label className="block text-sm font-medium text-calm-800 mb-1">5. Evidence Against This Thought</label>
+          <textarea className="textarea-field" rows={3} placeholder="What facts contradict it? What would a friend say? What have you overlooked?" value={fields.evidenceAgainst} onChange={(e) => setFields({ ...fields, evidenceAgainst: e.target.value })} />
         </div>
       </div>
       <div>
-        <label className="block text-sm font-medium text-calm-800 mb-1">Balanced Thought</label>
-        <textarea className="textarea-field" rows={2} placeholder="A more balanced, realistic perspective..." value={fields.balanced} onChange={(e) => setFields({ ...fields, balanced: e.target.value })} />
+        <label className="block text-sm font-medium text-calm-800 mb-1">6. Balanced Thought</label>
+        <textarea className="textarea-field" rows={2} placeholder="A more balanced perspective that accounts for both sides of the evidence..." value={fields.balanced} onChange={(e) => setFields({ ...fields, balanced: e.target.value })} />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-calm-800 mb-1">7. Re-Rate Your Feeling Now (0-100)</label>
+        <input className="input-field" placeholder="How intense is the feeling now? (e.g., Anxiety 45, Sadness 30)" value={fields.reRating} onChange={(e) => setFields({ ...fields, reRating: e.target.value })} />
+        <p className="text-xs text-calm-500 mt-1">It is okay if it has not changed much — awareness itself is progress. The goal is not zero distress.</p>
       </div>
       <button onClick={onComplete} className="btn-primary">
         Save & Continue
@@ -258,11 +264,11 @@ function AttachmentReflection({ onComplete }: { onComplete: () => void }) {
 // Trigger Mapper
 function TriggerMapper({ onComplete }: { onComplete: () => void }) {
   const [triggers, setTriggers] = useState([
-    { trigger: '', emotion: '', urge: '', usualAction: '', preferredAction: '' },
+    { trigger: '', bodySensation: '', emotion: '', urge: '', usualAction: '', preferredAction: '' },
   ])
 
   const addRow = () => {
-    setTriggers([...triggers, { trigger: '', emotion: '', urge: '', usualAction: '', preferredAction: '' }])
+    setTriggers([...triggers, { trigger: '', bodySensation: '', emotion: '', urge: '', usualAction: '', preferredAction: '' }])
   }
 
   const update = (index: number, field: string, value: string) => {
@@ -283,6 +289,7 @@ function TriggerMapper({ onComplete }: { onComplete: () => void }) {
             )}
           </div>
           <input className="input-field text-sm" placeholder="What triggers you? (e.g., partner not texting back)" value={t.trigger} onChange={(e) => update(i, 'trigger', e.target.value)} />
+          <input className="input-field text-sm" placeholder="Where do you feel it in your body? (e.g., tight chest, churning stomach, clenched jaw)" value={t.bodySensation} onChange={(e) => update(i, 'bodySensation', e.target.value)} />
           <div className="grid sm:grid-cols-2 gap-3">
             <input className="input-field text-sm" placeholder="What emotion comes up?" value={t.emotion} onChange={(e) => update(i, 'emotion', e.target.value)} />
             <input className="input-field text-sm" placeholder="What urge do you feel?" value={t.urge} onChange={(e) => update(i, 'urge', e.target.value)} />
@@ -314,6 +321,7 @@ function EmotionLabeller({ onComplete }: { onComplete: () => void }) {
     { situation: 'You send a heartfelt message and get a one-word reply hours later.', surfaceEmotion: 'Anger / Frustration', primaryEmotion: 'Hurt; fear of being unimportant or invisible' },
     { situation: 'Your partner wants a night out with friends without you.', surfaceEmotion: 'Anxiety / Resentment', primaryEmotion: 'Fear of abandonment; loneliness; need for reassurance' },
     { situation: 'Someone you are dating starts pulling away after a period of closeness.', surfaceEmotion: 'Panic / Desperation', primaryEmotion: 'Core fear of abandonment; grief for the closeness being lost' },
+    { situation: 'You open up about something vulnerable and your partner changes the subject or makes a joke.', surfaceEmotion: 'Anger / Shutdown', primaryEmotion: 'Shame about your vulnerability; hurt from feeling unseen; fear that your emotional needs are "too much"' },
   ]
   const [current, setCurrent] = useState(0)
   const [guesses, setGuesses] = useState<string[]>([])
