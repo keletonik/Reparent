@@ -70,8 +70,9 @@ export default function SessionPlayerPage({
     )
   }
 
-  const segment = session.segments[currentSegment]
   const totalSegments = session.segments.length
+  const safeIndex = Math.min(currentSegment, totalSegments - 1)
+  const segment = session.segments[safeIndex]
   const progressPct = Math.round(((completedSegments.size) / totalSegments) * 100)
   const isAlreadyComplete = completedSessions.includes(sessionId)
 
@@ -95,6 +96,8 @@ export default function SessionPlayerPage({
           'naming-emotions': { title: 'Emotion Detective', description: 'Learned to name and understand emotions', category: 'skill' },
           'thought-records': { title: 'Thought Challenger', description: 'Completed your first thought record', category: 'skill' },
           'bond-vs-love': { title: 'Eyes Wide Open', description: 'Learned to distinguish bonds from love', category: 'courage' },
+          'codependency-understanding': { title: 'Breaking Free', description: 'Began understanding your codependent patterns', category: 'courage' },
+          'reclaiming-self': { title: 'Reclaimed', description: 'Started rebuilding your sense of self', category: 'courage' },
           'inner-critic': { title: 'Self-Compassion Pioneer', description: 'Began meeting your inner critic with kindness', category: 'courage' },
           'boundary-basics': { title: 'Boundary Builder', description: 'Learned to set and hold healthy boundaries', category: 'skill' },
           'repair-skills': { title: 'Repair Apprentice', description: 'Learned the art of relationship repair', category: 'skill' },

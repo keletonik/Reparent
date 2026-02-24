@@ -318,22 +318,22 @@ export const modules: Module[] = [
               sections: [
                 {
                   heading: 'Why We Attach',
-                  text: 'Humans are wired for connection. From birth, we rely on caregivers for safety, comfort, and survival. This is not weakness — it is biology. The attachment system evolved to keep us close to people who can protect and support us.',
+                  text: 'Humans are wired for connection. John Bowlby, the founder of attachment theory, showed that from birth we rely on caregivers for safety, comfort, and survival. This is not weakness — it is biology. The attachment system evolved to keep us close to people who can protect and support us. Mary Ainsworth\'s Strange Situation research confirmed that the quality of this early bond shapes how we relate to others throughout life.',
                 },
                 {
                   heading: 'Attachment Is Dimensional, Not Categorical',
-                  text: 'Modern research shows attachment is best understood on two dimensions: attachment anxiety (fear of abandonment, need for reassurance) and attachment avoidance (discomfort with closeness, preference for independence). Everyone falls somewhere on each dimension — it is not a fixed "type".',
+                  text: 'Researchers Brennan, Clark, and Shaver (1998) demonstrated that adult attachment is best understood on two dimensions: attachment anxiety (fear of abandonment, need for reassurance) and attachment avoidance (discomfort with closeness, preference for independence). Everyone falls somewhere on each dimension — it is not a fixed "type".',
                   keyIdeas: [
                     'High anxiety + low avoidance = anxious-preoccupied tendencies',
                     'Low anxiety + high avoidance = dismissive tendencies',
-                    'High anxiety + high avoidance = fearful-avoidant tendencies',
+                    'High anxiety + high avoidance = fearful-avoidant (disorganised) tendencies',
                     'Low anxiety + low avoidance = secure tendencies',
                     'These patterns can shift with awareness and practice',
                   ],
                 },
                 {
                   heading: 'Change Is Possible',
-                  text: 'While early experiences shape our initial patterns, longitudinal research shows that attachment can change throughout life. Therapy, healthy relationships, and intentional skill practice can all move someone toward greater security.',
+                  text: 'While early experiences shape our initial patterns, longitudinal research (including the Minnesota Study of Risk and Adaptation) shows that attachment can change throughout life. What researchers call "earned security" — developing secure attachment despite insecure beginnings — is well-documented. Therapy, healthy relationships, and intentional skill practice can all move someone toward greater security.',
                 },
               ],
             },
@@ -534,7 +534,7 @@ export const modules: Module[] = [
             id: 'iwm-psychoed', type: 'psychoeducation', title: 'Inner Working Models', estimatedMinutes: 8,
             content: { type: 'psychoeducation', sections: [
               { heading: 'What Are Inner Working Models?', text: 'From our earliest relationships, we develop internal "maps" of how relationships work. These maps — called inner working models — contain beliefs like "I am lovable" or "I am not enough," and "Others can be trusted" or "Others will eventually leave." These models were adaptive in childhood but may no longer serve you.' },
-              { heading: 'Common Schemas', text: 'Schemas are deep patterns of belief. Some common ones include: Abandonment ("People I love will leave"), Defectiveness ("There is something fundamentally wrong with me"), Emotional Deprivation ("My needs will never be met"), and Mistrust ("People will hurt or betray me").', keyIdeas: ['Schemas feel like facts, but they are beliefs', 'They were formed when you had less power and fewer options', 'Identifying them is the first step to updating them'] },
+              { heading: 'Common Schemas', text: 'Jeffrey Young\'s Schema Therapy identifies 18 Early Maladaptive Schemas — deep patterns of belief formed in childhood. The ones most relevant to attachment include: Abandonment ("People I love will leave"), Defectiveness ("There is something fundamentally wrong with me"), Emotional Deprivation ("My emotional needs will never be met"), Mistrust/Abuse ("People will hurt or betray me"), Subjugation ("I must suppress my needs to maintain connection"), and Enmeshment ("I cannot survive without this person"). Young also identified "schema modes" — the emotional states that activate when schemas are triggered. The Vulnerable Child mode carries the original pain. The Angry Child protests the unmet need. The Punitive Parent attacks you for having needs. The goal is to strengthen your Healthy Adult mode — the part that can comfort, protect, and guide you.', keyIdeas: ['Schemas feel like facts, but they are beliefs formed under duress', 'They were formed when you had less power and fewer options', 'Schema modes explain why you can feel like a different person when triggered', 'The Healthy Adult mode is what we are building throughout this program'] },
             ] },
           },
           {
@@ -581,9 +581,9 @@ export const modules: Module[] = [
           {
             id: 'tr-psychoed', type: 'psychoeducation', title: 'The Four Trauma Responses', estimatedMinutes: 8,
             content: { type: 'psychoeducation', sections: [
-              { heading: 'Your Body\'s Protection System', text: 'When your nervous system perceives threat, it activates survival responses. These are not conscious choices — they are automatic protective reactions. In relationships, these responses can be triggered by perceived abandonment, criticism, or conflict.' },
-              { heading: 'Fight, Flight, Freeze, Fawn', text: 'Fight: arguing, criticising, becoming controlling. Flight: leaving, avoiding, distracting, over-working. Freeze: shutting down, going numb, dissociating. Fawn: people-pleasing, abandoning your own needs, over-accommodating to avoid conflict.', keyIdeas: ['These responses kept you safe at some point', 'They become problematic when they fire in safe situations', 'Recognising your default response is the first step to changing it', 'You may use different responses in different contexts'] },
-              { heading: 'CPTSD and Ongoing Trauma', text: 'ICD-11 recognises Complex PTSD, which includes PTSD symptoms plus disturbances in emotion regulation, self-concept, and relationships. This is particularly relevant for those who experienced ongoing childhood trauma. If this resonates strongly, professional support from a trauma-informed clinician is recommended.' },
+              { heading: 'Your Body\'s Protection System', text: 'Stephen Porges\' Polyvagal Theory explains how your nervous system has three states: ventral vagal (safe and social — you feel connected and calm), sympathetic (fight or flight — you feel activated and alert), and dorsal vagal (freeze/shutdown — you feel numb or collapsed). Porges introduced the concept of "neuroception" — your nervous system\'s unconscious surveillance system that is constantly scanning for safety or danger. Neuroception happens below awareness: before you consciously think "I feel unsafe," your body has already shifted state. In relationships, your neuroception can be triggered by a partner\'s tone of voice, facial expression, or even a delayed text reply.' },
+              { heading: 'Fight, Flight, Freeze, Fawn', text: 'Pete Walker, author of Complex PTSD: From Surviving to Thriving, identified four trauma responses. Fight: arguing, criticising, becoming controlling. Flight: leaving, avoiding, distracting, over-working. Freeze: shutting down, going numb, dissociating. Fawn: people-pleasing, abandoning your own needs, over-accommodating to avoid conflict.', keyIdeas: ['These responses kept you safe at some point', 'They become problematic when they fire in safe situations', 'Recognising your default response is the first step to changing it', 'You may use different responses in different contexts'] },
+              { heading: 'CPTSD and Ongoing Trauma', text: 'The World Health Organisation\'s ICD-11 recognises Complex PTSD, which includes PTSD symptoms plus disturbances in emotion regulation, self-concept, and relationships. This is particularly relevant for those who experienced ongoing childhood trauma, as described by Judith Herman in Trauma and Recovery. If this resonates strongly, professional support from a trauma-informed clinician is recommended.' },
             ] },
           },
           {
@@ -636,7 +636,7 @@ export const modules: Module[] = [
             id: 'ss-psychoed', type: 'psychoeducation', title: 'The STOP Skill', estimatedMinutes: 6,
             content: { type: 'psychoeducation', sections: [
               { heading: 'When Attachment Panic Hits', text: 'The moment you feel that surge — the need to text, call, check their social media, seek reassurance — your attachment system has been activated. In that moment, your brain narrows its focus to one thing: reconnecting at any cost. The STOP skill interrupts this spiral.' },
-              { heading: 'S.T.O.P.', text: 'S — Stop. Physically stop what you are doing. Put the phone down. T — Take a breath. Do 6 slow breaths to engage your calming nervous system. O — Observe. Name what you are feeling, what your body is doing, and what thoughts are running. P — Proceed mindfully. Choose one action aligned with your values, not your panic.', keyIdeas: ['Pausing interrupts the reinforcement loop', 'The urge will pass — urges are temporary', 'You are creating space for a choice'] },
+              { heading: 'S.T.O.P.', text: 'S — Stop. Physically stop what you are doing. Put the phone down. T — Take a breath. Do 6 slow breaths to engage your parasympathetic nervous system. O — Observe. Name what you are feeling, what your body is doing, and what thoughts are running. This is the "Name It to Tame It" step. P — Proceed mindfully. Choose one action from your "Wise Mind" — the place where emotion mind and rational mind overlap. Marsha Linehan (the creator of DBT) teaches that Wise Mind is your inner knowing: it honours what you feel AND what you know to be true.', keyIdeas: ['Pausing interrupts the reinforcement loop', 'The urge will pass — urges are temporary, usually peaking and fading within 20 minutes', 'Wise Mind: "What would I advise a friend to do right now?"', 'You are creating space for a choice rather than a reaction'] },
             ] },
           },
           {
@@ -658,6 +658,36 @@ export const modules: Module[] = [
               { question: 'True or False: No contact should be used as a tactic to make your ex miss you.', options: ['True', 'False'], correctIndex: 1, explanation: 'No contact is a self-protective boundary for nervous system regulation and breaking reinforcement patterns — not a manipulation tactic.' },
             ] },
           },
+        ],
+      },
+      {
+        id: 'tipp-skill',
+        moduleId: 'dbt-distress-tolerance',
+        title: 'TIPP: Change Your Body Chemistry Fast',
+        description: 'Learn the TIPP skill — a DBT technique that uses your body to rapidly change your emotional state when you are in crisis.',
+        estimatedMinutes: 25,
+        learningObjectives: [
+          'Apply each component of the TIPP skill',
+          'Understand the physiological mechanisms behind each technique',
+          'Build a personal TIPP toolkit for attachment activation',
+        ],
+        prerequisites: ['stop-skill'],
+        contraindications: ['If you have a heart condition, consult your doctor before using cold water techniques. Skip the Temperature step if you have Raynaud\'s syndrome.'],
+        segments: [
+          { id: 'tipp-safety', type: 'safety-check', title: 'Check-In', estimatedMinutes: 2, content: { type: 'safety-check', question: 'How activated do you feel right now?', options: [{ label: 'Calm', value: 1 }, { label: 'Slightly activated', value: 3 }, { label: 'Moderately activated', value: 5 }, { label: 'Quite activated', value: 7 }, { label: 'Very distressed', value: 9 }] } },
+          { id: 'tipp-psychoed', type: 'psychoeducation', title: 'The TIPP Skill', estimatedMinutes: 8,
+            content: { type: 'psychoeducation', sections: [
+              { heading: 'When Your Body Is in Overdrive', text: 'Sometimes your emotional activation is so high that thinking-based skills like STOP or thought records cannot get through. Your prefrontal cortex is offline and your body is running the show. TIPP works by changing your body chemistry directly, bringing your arousal level down so that cognitive skills become possible. Developed by Marsha Linehan as part of DBT crisis survival skills.' },
+              { heading: 'T.I.P.P.', text: 'T — Temperature. Submerge your face in cold water or hold an ice pack to your forehead and cheeks for 30 seconds. This triggers the mammalian dive reflex, instantly slowing your heart rate by up to 25%. I — Intense Exercise. Do 20 minutes of vigorous exercise — running, jumping jacks, burpees, fast walking. This metabolises the stress hormones (adrenaline and cortisol) flooding your body. P — Paced Breathing. Slow your breathing so that your exhale is longer than your inhale (e.g., 4 in, 6 out). This directly activates your parasympathetic nervous system. P — Paired Muscle Relaxation. Tense each muscle group for 5 seconds, then release while exhaling. The release of tension signals safety to your nervous system.', keyIdeas: ['TIPP works on your physiology, not your thoughts — use it when you are too activated to think clearly', 'Temperature is the fastest acting — it can reduce heart rate within seconds', 'You do not need to do all four — even one component can shift your state significantly', 'Build a TIPP kit: ice pack in the freezer, running shoes by the door, a breathing timer on your phone'] },
+            ] },
+          },
+          { id: 'tipp-breathing', type: 'breathing', title: 'Paced Breathing Practice', estimatedMinutes: 4, content: { type: 'breathing', pattern: { inhale: 4, hold: 0, exhale: 7, holdAfter: 1 }, durationSeconds: 120, instruction: 'Breathe in for 4 counts, then out slowly for 7 counts. The extended exhale activates your vagus nerve — the brake pedal of your nervous system.' } },
+          { id: 'tipp-journal', type: 'journal', title: 'Your TIPP Plan', estimatedMinutes: 5, content: { type: 'journal', prompts: ['Which TIPP component do you think would be most effective for you and why?', 'Where could you keep a cold pack or ice for the Temperature step?', 'What form of intense exercise is most accessible to you right now?', 'Describe a recent situation where TIPP could have helped before you reacted.'], privacyNote: 'Your reflections are private.' } },
+          { id: 'tipp-action', type: 'action-plan', title: 'Build Your TIPP Kit', estimatedMinutes: 3, content: { type: 'action-plan', prompt: 'This week, you will prepare your TIPP toolkit:', options: [{ id: 'ice-pack', label: 'Put an ice pack or bag of frozen peas in the freezer', description: 'Ready for the Temperature step when you need it' }, { id: 'exercise-plan', label: 'Identify your go-to intense exercise and keep gear ready', description: 'Remove barriers to using Intense Exercise in the moment' }, { id: 'full-tipp', label: 'Practice the full TIPP sequence once this week (not in crisis)', description: 'Rehearsing when calm makes it automatic when activated' }], timeHorizonDays: 7 } },
+          { id: 'tipp-quiz', type: 'quiz', title: 'TIPP Knowledge Check', estimatedMinutes: 3, content: { type: 'quiz', items: [
+            { question: 'The cold water technique works because:', options: ['It distracts you from the problem', 'It triggers the mammalian dive reflex, slowing your heart rate', 'It numbs your emotions', 'It is unpleasant enough to stop you crying'], correctIndex: 1, explanation: 'Cold water on the face triggers the dive reflex — a hardwired mammalian response that slows the heart rate and redirects blood to the brain and core organs.' },
+            { question: 'TIPP is most useful when:', options: ['You are feeling slightly uneasy', 'You want to understand your thoughts better', 'Your emotional intensity is so high that you cannot think clearly', 'You want to avoid feeling emotions'], correctIndex: 2, explanation: 'TIPP is designed for high-intensity emotional states where cognitive skills cannot get through. It changes your body chemistry to bring arousal down to a level where thinking-based skills become possible.' },
+          ] } },
         ],
       },
     ],
@@ -683,7 +713,7 @@ export const modules: Module[] = [
         segments: [
           { id: 'ne-safety', type: 'safety-check', title: 'Check-In', estimatedMinutes: 2, content: { type: 'safety-check', question: 'How are you feeling?', options: [{ label: 'Calm', value: 1 }, { label: 'Slightly uneasy', value: 3 }, { label: 'Activated', value: 5 }, { label: 'Distressed', value: 7 }, { label: 'Very distressed', value: 9 }] } },
           { id: 'ne-psychoed', type: 'psychoeducation', title: 'Emotions Are Information', estimatedMinutes: 7, content: { type: 'psychoeducation', sections: [
-            { heading: 'Why Name Emotions?', text: 'Research shows that accurately labelling an emotion reduces its intensity. When you say "I feel anxious" instead of "I feel terrible," you activate your prefrontal cortex and create distance between you and the feeling.' },
+            { heading: 'Why Name Emotions?', text: 'Dan Siegel coined the phrase "Name It to Tame It" to describe a powerful finding: accurately labelling an emotion reduces its intensity. Research by Matthew Lieberman at UCLA confirmed that putting feelings into words (affect labelling) decreases amygdala activation and increases prefrontal cortex engagement. When you say "I feel anxious" instead of "I feel terrible," you literally shift which part of your brain is in charge.' },
             { heading: 'Primary vs Secondary Emotions', text: 'A primary emotion is the first feeling (e.g., hurt). A secondary emotion is the reaction to that feeling (e.g., anger about feeling hurt). In anxious attachment, the primary emotion is often fear or sadness, but what surfaces is anger, jealousy, or panic.', keyIdeas: ['Anger often masks fear or hurt', 'Jealousy often masks insecurity or shame', 'Finding the primary emotion helps you address the real need'] },
             { heading: 'The Function of Emotions', text: 'Every emotion has a function: fear alerts you to danger, sadness signals loss, anger signals a boundary violation. The emotion is not the problem — it is data about what you need.' },
           ] } },
@@ -716,7 +746,7 @@ export const modules: Module[] = [
           { id: 'tr2-safety', type: 'safety-check', title: 'Check-In', estimatedMinutes: 2, content: { type: 'safety-check', question: 'How are you feeling?', options: [{ label: 'Calm', value: 1 }, { label: 'Slightly uneasy', value: 3 }, { label: 'Activated', value: 5 }, { label: 'Distressed', value: 7 }, { label: 'Very distressed', value: 9 }] } },
           { id: 'tr2-psychoed', type: 'psychoeducation', title: 'Common Thinking Traps', estimatedMinutes: 8, content: { type: 'psychoeducation', sections: [
             { heading: 'Thoughts Are Not Facts', text: 'When your attachment system is activated, your brain generates thoughts that feel absolutely true but are often distorted. These "thinking traps" fuel anxiety and drive reactive behaviours.' },
-            { heading: 'Common Traps in Anxious Attachment', text: 'Mind Reading: "They did not reply because they are losing interest." Catastrophising: "If they leave, I will never recover." Personalising: "Their bad mood is about me." All-or-Nothing: "If they are not enthusiastic, they must not care." Emotional Reasoning: "I feel abandoned, so I must be being abandoned."', keyIdeas: ['Your brain is trying to protect you, but the alarm is often false', 'Challenging a thought is not dismissing your feelings', 'The goal is balanced thinking, not positive thinking'] },
+            { heading: 'Common Traps in Anxious Attachment', text: 'Aaron Beck and David Burns identified cognitive distortions that fuel emotional suffering. The ones most active in attachment anxiety include: Mind Reading: "They did not reply because they are losing interest." Catastrophising: "If they leave, I will never recover." Personalising: "Their bad mood is about me." All-or-Nothing: "If they are not enthusiastic, they must not care." Emotional Reasoning: "I feel abandoned, so I must be being abandoned." Should Statements: "They should know what I need without me having to ask." Magnification: Blowing one small sign into proof of rejection. Fortune-Telling: "I know this will end badly." Discounting the Positive: "They said they love me, but they probably do not mean it."', keyIdeas: ['Your brain is trying to protect you, but the alarm is often false', 'Challenging a thought is not dismissing your feelings — it is testing the evidence', 'The goal is balanced thinking, not positive thinking', 'Most distortions contain a grain of truth wrapped in exaggeration'] },
           ] } },
           { id: 'tr2-interactive', type: 'interactive', title: 'Thought Record Builder', estimatedMinutes: 10, content: { type: 'interactive', component: 'ThoughtRecord', config: {}, instructions: 'Think of a recent situation where you felt triggered. Walk through the thought record to find a more balanced perspective.' } },
           { id: 'tr2-journal', type: 'journal', title: 'Your Thinking Patterns', estimatedMinutes: 5, content: { type: 'journal', prompts: ['What thinking trap do you fall into most often?', 'If a friend had this thought, what would you say to them?', 'What evidence exists against your most common anxious thought?'], privacyNote: 'Private reflections.' } },
@@ -746,7 +776,7 @@ export const modules: Module[] = [
         segments: [
           { id: 'bvl-safety', type: 'safety-check', title: 'Check-In', estimatedMinutes: 2, content: { type: 'safety-check', question: 'This session discusses abuse dynamics. How are you feeling about this topic?', options: [{ label: 'Ready to learn', value: 1 }, { label: 'Cautious but okay', value: 3 }, { label: 'Somewhat triggered', value: 5 }, { label: 'Very activated', value: 7 }, { label: 'Not safe to continue', value: 9 }] } },
           { id: 'bvl-psychoed', type: 'psychoeducation', title: 'What Is Trauma Bonding?', estimatedMinutes: 8, content: { type: 'psychoeducation', sections: [
-            { heading: 'Trauma Bonding Is Not Love', text: 'Trauma bonding occurs when attachment is strengthened by two factors: power imbalance and intermittent reinforcement (unpredictable cycles of good and bad treatment). This creates an addictive-like bond that feels like intense love but is driven by fear and relief.' },
+            { heading: 'Trauma Bonding Is Not Love', text: 'Patrick Carnes first described the "betrayal bond" — what we now call trauma bonding. It occurs when attachment is strengthened by two factors: power imbalance and intermittent reinforcement (unpredictable cycles of good and bad treatment). This creates an addictive-like bond because the brain\'s dopamine system responds most powerfully to unpredictable rewards. The "highs" of the good periods feel more intense precisely because they are sandwiched between fear and pain. Neurobiologically, this mirrors substance addiction — the bond is chemical, not just emotional, which is why willpower alone is often not enough to leave.' },
             { heading: 'How It Differs from Anxious Attachment', text: 'Anxious attachment involves fear of abandonment in relationships that may be imperfect but safe. Trauma bonding involves actual danger — abuse, coercion, control, or violence. The key question: Is there a genuine power imbalance? Is the "good" behaviour used to maintain control?', keyIdeas: ['Anxious attachment: fear of losing a safe-enough person', 'Trauma bond: attachment to someone who is actively harmful', 'The "high" after a bad period is reinforcement, not reconciliation', 'Leaving feels impossible because the bond is neurological, not just emotional'] },
             { heading: 'Red Flags', text: 'Isolation from friends/family, monitoring your behaviour, punishment for "wrong" responses, love-bombing followed by withdrawal, making you question your reality (gaslighting), threats when you try to leave.' },
           ] } },
@@ -760,11 +790,134 @@ export const modules: Module[] = [
     ],
   },
   {
+    id: 'codependency-healing',
+    title: 'Healing Codependency',
+    description: 'Understand codependent patterns, reclaim your sense of self, and learn to love without losing yourself. Build interdependence instead of enmeshment.',
+    icon: 'users',
+    order: 9,
+    category: 'skills',
+    prerequisites: ['attachment-foundations'],
+    sessions: [
+      {
+        id: 'codependency-understanding',
+        moduleId: 'codependency-healing',
+        title: 'What Is Codependency?',
+        description: 'Learn what codependency actually is, how it develops, and why it feels like love even when it hurts.',
+        estimatedMinutes: 30,
+        learningObjectives: [
+          'Define codependency and its origins',
+          'Distinguish codependency from healthy caregiving',
+          'Identify personal codependent patterns',
+        ],
+        prerequisites: [],
+        contraindications: ['If you are in a relationship involving domestic violence, please access DV resources first'],
+        segments: [
+          {
+            id: 'cu-safety', type: 'safety-check', title: 'Check-In', estimatedMinutes: 2,
+            content: { type: 'safety-check', question: 'How are you feeling as we explore this topic?', options: [{ label: 'Calm and curious', value: 1 }, { label: 'A little uneasy', value: 3 }, { label: 'Somewhat activated', value: 5 }, { label: 'Quite distressed', value: 7 }, { label: 'Very distressed', value: 9 }] },
+          },
+          {
+            id: 'cu-psychoed', type: 'psychoeducation', title: 'Understanding Codependency', estimatedMinutes: 8,
+            content: { type: 'psychoeducation', sections: [
+              { heading: 'What Codependency Really Means', text: 'Codependency is a pattern where your sense of self, worth, and emotional stability becomes excessively dependent on another person. You organise your life around managing their feelings, fixing their problems, or preventing their disapproval — often at the expense of your own needs, identity, and wellbeing.' },
+              { heading: 'How It Develops', text: 'Codependency typically develops in childhood when a child learns that love is conditional — that they must earn it by being useful, managing a parent\'s emotions, or suppressing their own needs. The child learns: "I am valuable when I am needed." This becomes the template for all future relationships.', keyIdeas: [
+                'Codependency is a learned survival strategy, not a character flaw',
+                'It often develops in families with addiction, mental illness, or emotional neglect',
+                'The "helper" role can feel like identity rather than a choice',
+                'Codependency and anxious attachment frequently overlap',
+              ] },
+              { heading: 'Love vs Codependency', text: 'Healthy love says: "I care about you AND I care about me." Codependency says: "I will abandon myself to keep you." The key difference is whether you can maintain your own identity, boundaries, and needs within the relationship — or whether the relationship requires you to erase them.' },
+            ] },
+          },
+          {
+            id: 'cu-interactive', type: 'interactive', title: 'Codependency Pattern Check', estimatedMinutes: 8,
+            content: { type: 'interactive', component: 'CodependencyReflection', config: {}, instructions: 'Reflect on these common codependent patterns. This is not a diagnosis — it is an invitation to honest self-awareness.' },
+          },
+          {
+            id: 'cu-journal', type: 'journal', title: 'Your Codependency Story', estimatedMinutes: 7,
+            content: { type: 'journal', prompts: [
+              'Do you tend to feel responsible for other people\'s emotions? When did this pattern start?',
+              'What happens to your sense of self when you are not in a relationship or not needed by someone?',
+              'What needs of your own have you been ignoring or minimising?',
+            ], privacyNote: 'These reflections are deeply personal and stored only on your device.' },
+          },
+          {
+            id: 'cu-quiz', type: 'quiz', title: 'Codependency Awareness Check', estimatedMinutes: 3,
+            content: { type: 'quiz', items: [
+              { question: 'Codependency is best described as:', options: ['Being a caring person', 'Organising your life around managing another person at the expense of yourself', 'A personality disorder', 'Being in a relationship'], correctIndex: 1, explanation: 'Codependency is a pattern where your identity and worth become excessively tied to managing another person\'s life and emotions, at the cost of your own needs.' },
+              { question: 'Codependency often develops because:', options: ['You are too kind', 'You learned in childhood that love required you to suppress your own needs', 'You chose the wrong partner', 'You are weak'], correctIndex: 1, explanation: 'Codependency is a learned survival strategy, typically rooted in childhood experiences where love felt conditional on being useful or managing others\' emotions.' },
+            ] },
+          },
+        ],
+      },
+      {
+        id: 'reclaiming-self',
+        moduleId: 'codependency-healing',
+        title: 'Reclaiming Your Self',
+        description: 'Rebuild your identity outside of caretaking roles and learn the difference between interdependence and enmeshment.',
+        estimatedMinutes: 30,
+        learningObjectives: [
+          'Identify where you have lost yourself in relationships',
+          'Understand enmeshment vs interdependence',
+          'Begin rebuilding a sense of self separate from others',
+        ],
+        prerequisites: ['codependency-understanding'],
+        contraindications: [],
+        segments: [
+          {
+            id: 'rs2-safety', type: 'safety-check', title: 'Check-In', estimatedMinutes: 2,
+            content: { type: 'safety-check', question: 'How are you feeling?', options: [{ label: 'Calm', value: 1 }, { label: 'A bit nervous', value: 3 }, { label: 'Somewhat activated', value: 5 }, { label: 'Distressed', value: 7 }, { label: 'Very distressed', value: 9 }] },
+          },
+          {
+            id: 'rs2-psychoed', type: 'psychoeducation', title: 'Enmeshment vs Interdependence', estimatedMinutes: 8,
+            content: { type: 'psychoeducation', sections: [
+              { heading: 'What Is Enmeshment?', text: 'Enmeshment is when the boundaries between you and another person are so blurred that you cannot tell where you end and they begin. Their mood becomes your mood. Their problems become your emergency. Their approval becomes your oxygen. This feels like closeness, but it is actually a loss of self.' },
+              { heading: 'The Interdependence Alternative', text: 'Interdependence means two whole people choosing to share their lives while maintaining their individual identities, needs, and boundaries. You can be close without being consumed. You can love without disappearing.', keyIdeas: [
+                'Enmeshment: "I need you to be okay so I can be okay"',
+                'Interdependence: "I care about your wellbeing AND I am responsible for my own"',
+                'You cannot pour from an empty cup',
+                'Healthy love does not require self-abandonment',
+              ] },
+              { heading: 'Signs You Have Lost Yourself', text: 'You cannot name your own hobbies or interests outside the relationship. You feel guilty when you spend time alone. You automatically defer to the other person\'s preferences. You feel empty or purposeless when they are not around. You monitor their mood to decide how you should feel.' },
+            ] },
+          },
+          {
+            id: 'rs2-breathing', type: 'breathing', title: 'Centering Breath', estimatedMinutes: 3,
+            content: { type: 'breathing', pattern: { inhale: 4, hold: 4, exhale: 6, holdAfter: 2 }, durationSeconds: 120, instruction: 'This breath helps you return to yourself. As you breathe, notice that you are a separate person with your own body, your own breath, your own life.' },
+          },
+          {
+            id: 'rs2-journal', type: 'journal', title: 'Rediscovering You', estimatedMinutes: 8,
+            content: { type: 'journal', prompts: [
+              'Who were you before you started organising your life around others? What did you enjoy?',
+              'What are three things you want, need, or feel right now — without considering anyone else\'s reaction?',
+              'What would your life look like if you gave yourself the same care and attention you give to others?',
+            ], privacyNote: 'Your reflections are private.' },
+          },
+          {
+            id: 'rs2-action', type: 'action-plan', title: 'One Step Back to You', estimatedMinutes: 3,
+            content: { type: 'action-plan', prompt: 'This week, you will take one step toward reclaiming your identity:', options: [
+              { id: 'solo-activity', label: 'Do one activity alone that you enjoy', description: 'Reconnect with your own interests without seeking approval' },
+              { id: 'need-expression', label: 'Express one need without apologising', description: 'Practice stating what you want clearly and without guilt' },
+              { id: 'mood-separation', label: 'Notice when you absorb someone else\'s mood and name it', description: 'Build awareness of emotional enmeshment in real time' },
+            ], timeHorizonDays: 7 },
+          },
+          {
+            id: 'rs2-quiz', type: 'quiz', title: 'Interdependence Check', estimatedMinutes: 3,
+            content: { type: 'quiz', items: [
+              { question: '"I need them to be okay so I can be okay" is an example of:', options: ['Healthy empathy', 'Interdependence', 'Enmeshment', 'Love'], correctIndex: 2, explanation: 'When your emotional state is entirely dependent on another person\'s wellbeing, that is enmeshment — a loss of boundaries between self and other.' },
+              { question: 'The goal of healing codependency is to:', options: ['Stop caring about people', 'Become completely independent and need no one', 'Build interdependence — closeness without self-abandonment', 'Avoid all relationships'], correctIndex: 2, explanation: 'Healing codependency means building interdependence: the ability to maintain your identity, needs, and boundaries while still being close to others.' },
+            ] },
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: 'self-compassion',
     title: 'Self-Compassion & Self-Respect',
     description: 'Build a relationship with yourself based on kindness rather than criticism. Learn to meet shame with compassion.',
     icon: 'flower',
-    order: 9,
+    order: 10,
     category: 'growth',
     prerequisites: ['orientation-safety'],
     sessions: [
@@ -780,12 +933,51 @@ export const modules: Module[] = [
         segments: [
           { id: 'ic-safety', type: 'safety-check', title: 'Check-In', estimatedMinutes: 2, content: { type: 'safety-check', question: 'How are you feeling?', options: [{ label: 'Calm', value: 1 }, { label: 'Slightly uneasy', value: 3 }, { label: 'Activated', value: 5 }, { label: 'Distressed', value: 7 }, { label: 'Very distressed', value: 9 }] } },
           { id: 'ic-psychoed', type: 'psychoeducation', title: 'Self-Compassion, Not Self-Esteem', estimatedMinutes: 7, content: { type: 'psychoeducation', sections: [
-            { heading: 'The Problem with Self-Criticism', text: 'Self-criticism feels productive but actually maintains shame, anxiety, and unhealthy relationship patterns. When you attack yourself ("I am too needy," "I am unlovable"), you reinforce the very beliefs that drive anxious attachment.' },
-            { heading: 'Three Components of Self-Compassion', text: 'Self-Kindness: Treating yourself as you would treat a good friend. Common Humanity: Remembering that suffering and imperfection are shared human experiences. Mindful Awareness: Holding difficult feelings with balance rather than over-identifying with them.', keyIdeas: ['Self-compassion is not self-pity', 'It is not letting yourself off the hook', 'Research shows it reduces self-criticism and improves distress outcomes', 'It is a skill that strengthens with practice'] },
+            { heading: 'The Problem with Self-Criticism', text: 'Self-criticism feels productive but actually maintains shame, anxiety, and unhealthy relationship patterns. When you attack yourself ("I am too needy," "I am unlovable"), you reinforce the very beliefs that drive anxious attachment. Research by Dr Paul Gilbert shows that self-criticism activates the brain\'s threat system, keeping you in a state of fight-or-flight.' },
+            { heading: 'Three Components of Self-Compassion', text: 'Dr Kristin Neff\'s research identifies three core components. Self-Kindness: Treating yourself as you would treat a good friend — actively soothing and comforting yourself rather than attacking. Common Humanity: Remembering that suffering and imperfection are shared human experiences — you are not alone in your pain. Mindful Awareness: Holding difficult feelings with balance rather than over-identifying with them or suppressing them.', keyIdeas: ['Self-compassion is not self-pity — research shows it increases motivation and resilience', 'It is not letting yourself off the hook — it increases personal responsibility (Breines & Chen, 2012)', 'Thousands of peer-reviewed studies link self-compassion to reduced anxiety, depression, and shame', 'It is a skill that strengthens with practice, like a muscle', 'Warning: "Backdraft" — when you first practise self-compassion, pain may initially increase as your defences soften. This is normal and temporary. Go slowly and use grounding if needed.'] },
           ] } },
           { id: 'ic-interactive', type: 'interactive', title: 'Compassionate Letter', estimatedMinutes: 10, content: { type: 'interactive', component: 'CompassionateLetter', config: {}, instructions: 'Write a brief letter to yourself from the perspective of a deeply caring, wise friend who knows everything you have been through.' } },
           { id: 'ic-journal', type: 'journal', title: 'Your Self-Talk', estimatedMinutes: 6, content: { type: 'journal', prompts: ['Where do you attack yourself most harshly? What words do you use?', 'Whose voice does your inner critic sound like?', 'What do you actually need to hear right now?'], privacyNote: 'Private.' } },
           { id: 'ic-quiz', type: 'quiz', title: 'Self-Compassion Check', estimatedMinutes: 3, content: { type: 'quiz', items: [{ question: 'Self-compassion is:', options: ['Self-pity and letting yourself off the hook', 'Treating yourself with the same kindness you would offer a friend', 'Ignoring your faults', 'Thinking you are better than others'], correctIndex: 1, explanation: 'Self-compassion means extending the same kindness and understanding to yourself that you would naturally offer to a good friend in pain.' }] } },
+        ],
+      },
+      {
+        id: 'inner-child-reparenting',
+        moduleId: 'self-compassion',
+        title: 'Inner Child Work & Reparenting',
+        description: 'Meet the child part of you that still carries old wounds. Learn to become the safe, nurturing parent that child needed — this is the heart of reparenting.',
+        estimatedMinutes: 35,
+        learningObjectives: [
+          'Understand the concept of the inner child in clinical psychology',
+          'Connect with your vulnerable child part with compassion',
+          'Practice a reparenting dialogue',
+          'Understand how reparenting relates to earned secure attachment',
+        ],
+        prerequisites: ['inner-critic'],
+        contraindications: ['This session may bring up strong emotions or childhood memories. If you experience flashbacks, dissociation, or severe distress, pause immediately and use grounding tools. Consider working with a trauma-informed therapist for deeper inner child work.'],
+        segments: [
+          { id: 'icr-safety', type: 'safety-check', title: 'Check-In', estimatedMinutes: 2, content: { type: 'safety-check', question: 'This session explores childhood experiences. How are you feeling about this?', options: [{ label: 'Ready and grounded', value: 1 }, { label: 'A little nervous but willing', value: 3 }, { label: 'Somewhat anxious', value: 5 }, { label: 'Quite distressed', value: 7 }, { label: 'Not ready — I need support', value: 9 }] } },
+          { id: 'icr-psychoed', type: 'psychoeducation', title: 'What Is the Inner Child?', estimatedMinutes: 8,
+            content: { type: 'psychoeducation', sections: [
+              { heading: 'The Child Who Still Lives Inside You', text: 'The "inner child" is not a metaphor — it refers to the neural networks, emotional memories, and attachment patterns formed in childhood that continue to influence your adult responses. When you feel a sudden wave of abandonment panic, shame, or desperate need for reassurance, you are often experiencing the world through the lens of the child you once were. Jeffrey Young\'s Schema Therapy calls this the "Vulnerable Child mode," and Richard Schwartz\'s Internal Family Systems (IFS) calls these wounded "parts" or "exiles."' },
+              { heading: 'What Is Reparenting?', text: 'Reparenting is the process of becoming your own safe, nurturing, protective parent figure. It means giving your inner child what they needed but did not receive: consistent presence, unconditional acceptance, emotional attunement, and gentle limits. In Schema Therapy, the therapist initially models "limited reparenting" — and then the client internalises this capacity as their "Healthy Adult." This is what we are building: a Healthy Adult part of you that can turn toward the scared, hurt child inside with warmth rather than criticism.', keyIdeas: ['Reparenting is not about blaming your parents — it is about meeting unmet needs now', 'Your inner child\'s reactions made sense in the context they were formed', 'You can learn to give yourself what you needed — this is the foundation of earned security', 'IFS teaches us that every "part" has a positive intent, even the ones that cause problems', 'Reparenting is a practice, not a destination — it happens one moment at a time'] },
+              { heading: 'The Neuroscience of Self-Reparenting', text: 'When you speak to yourself with warmth and understanding, you activate the same neural pathways as receiving comfort from a caregiver. This is not imagination — fMRI studies show that self-compassion activates the mammalian caregiving system (the left temporal pole and medial prefrontal cortex). Over time, this literally rewires the attachment circuitry in your brain, building what researchers call "earned secure attachment."' },
+            ] },
+          },
+          { id: 'icr-breathing', type: 'breathing', title: 'Grounding Before Inner Child Work', estimatedMinutes: 3, content: { type: 'breathing', pattern: { inhale: 4, hold: 4, exhale: 6, holdAfter: 2 }, durationSeconds: 90, instruction: 'Before we connect with younger parts, let us ground your adult self first. Breathe slowly and feel your feet on the ground. You are safe, you are here, you are an adult with choices.' } },
+          { id: 'icr-journal', type: 'journal', title: 'Meeting Your Inner Child', estimatedMinutes: 12,
+            content: { type: 'journal', prompts: [
+              'Close your eyes for a moment and picture yourself as a child (around age 5-8). What do you see? What is the child feeling? What do they need?',
+              'What did that child learn about love, safety, and their own worth? What messages did they receive about whether their emotions and needs were acceptable?',
+              'If you could go back and sit with that child right now, what would you say to them? What do they need to hear from a safe, protective adult?',
+              'Write a brief message from your Healthy Adult self to your inner child. Begin with: "Dear little one, I want you to know..."',
+            ], privacyNote: 'This is deeply personal work. Your reflections are private and stored only on your device.' },
+          },
+          { id: 'icr-quiz', type: 'quiz', title: 'Reparenting Check', estimatedMinutes: 3, content: { type: 'quiz', items: [
+            { question: '"Reparenting" in therapy means:', options: ['Blaming your parents for your problems', 'Becoming the safe, nurturing parent to yourself that your inner child needed', 'Cutting off contact with your family', 'Pretending your childhood was fine'], correctIndex: 1, explanation: 'Reparenting is the process of giving your inner child — the wounded part of you that still carries old pain — the consistent safety, warmth, and attunement they needed. It is about meeting unmet needs, not assigning blame.' },
+            { question: '"Earned secure attachment" means:', options: ['Attachment security you were born with', 'Security that develops despite insecure early experiences, through therapy and intentional practice', 'Attachment that comes from finding the right partner', 'A theoretical concept with no research support'], correctIndex: 1, explanation: 'Earned security is one of the most hopeful findings in attachment research. It shows that people can develop secure attachment patterns despite insecure beginnings, through therapeutic relationships, self-compassion practice, and intentional skill-building — exactly what this program teaches.' },
+          ] } },
+          { id: 'icr-reflection', type: 'reflection', title: 'Closing Reflection', estimatedMinutes: 5, content: { type: 'reflection', prompts: ['What was it like to connect with your inner child today?', 'What is one thing your inner child needs from you going forward?', 'How might your daily life change if you treated yourself the way a loving parent would?'] } },
         ],
       },
     ],
@@ -795,7 +987,7 @@ export const modules: Module[] = [
     title: 'Boundaries & Needs Communication',
     description: 'Learn to set healthy boundaries, communicate needs without threats, and practise assertiveness from a place of self-respect.',
     icon: 'fence',
-    order: 10,
+    order: 11,
     category: 'growth',
     prerequisites: ['self-compassion'],
     sessions: [
@@ -811,7 +1003,7 @@ export const modules: Module[] = [
         segments: [
           { id: 'bb-safety', type: 'safety-check', title: 'Check-In', estimatedMinutes: 2, content: { type: 'safety-check', question: 'How are you feeling?', options: [{ label: 'Calm', value: 1 }, { label: 'Slightly uneasy', value: 3 }, { label: 'Activated', value: 5 }, { label: 'Distressed', value: 7 }, { label: 'Very distressed', value: 9 }] } },
           { id: 'bb-psychoed', type: 'psychoeducation', title: 'Boundaries Are Self-Care', estimatedMinutes: 7, content: { type: 'psychoeducation', sections: [
-            { heading: 'Boundaries Are What You Will Do, Not What Others Must Do', text: 'A boundary is not a demand you place on another person. It is a statement about what you will do to protect your wellbeing. "I need you to stop yelling" is a request. "If yelling continues, I will leave the room" is a boundary.' },
+            { heading: 'Boundaries Are What You Will Do, Not What Others Must Do', text: 'A boundary is not a demand you place on another person. It is a statement about what you will do to protect your wellbeing. "I need you to stop yelling" is a request. "If yelling continues, I will leave the room" is a boundary. There are several types of boundaries: Physical (your personal space, touch, body), Emotional (how much emotional labour you take on, what feelings you absorb), Time (how you allocate your time and energy), Digital (social media checking, phone availability, response expectations), and Material (your possessions, money, resources). For people with anxious attachment, the hardest boundaries are usually emotional and digital — because these are where the attachment system pulls hardest.' },
             { heading: 'DEAR MAN: A DBT Communication Framework', text: 'Describe the situation factually. Express how you feel using "I" statements. Assert what you need clearly. Reinforce why this matters for both people. Stay Mindful of your goal. Appear confident even if you feel nervous. Negotiate where possible.', keyIdeas: ['Boundaries protect relationships — they do not destroy them', 'Guilt about boundaries is normal but not a reason to abandon them', 'Start with small boundaries and build confidence'] },
           ] } },
           { id: 'bb-interactive', type: 'interactive', title: 'DEAR MAN Practice', estimatedMinutes: 10, content: { type: 'interactive', component: 'DearManBuilder', config: {}, instructions: 'Choose a boundary you want to set and build a DEAR MAN script for communicating it.' } },
@@ -826,7 +1018,7 @@ export const modules: Module[] = [
     title: 'Secure Relating & Repair',
     description: 'Learn the skills of secure attachment: responding to bids, repairing ruptures, and building trust through consistent, safe behaviour.',
     icon: 'handshake',
-    order: 11,
+    order: 12,
     category: 'growth',
     prerequisites: ['boundaries-communication'],
     sessions: [
@@ -842,12 +1034,50 @@ export const modules: Module[] = [
         segments: [
           { id: 'rs-safety', type: 'safety-check', title: 'Check-In', estimatedMinutes: 2, content: { type: 'safety-check', question: 'How are you feeling?', options: [{ label: 'Calm', value: 1 }, { label: 'Slightly uneasy', value: 3 }, { label: 'Activated', value: 5 }, { label: 'Distressed', value: 7 }, { label: 'Very distressed', value: 9 }] } },
           { id: 'rs-psychoed', type: 'psychoeducation', title: 'Rupture and Repair', estimatedMinutes: 8, content: { type: 'psychoeducation', sections: [
-            { heading: 'All Relationships Have Ruptures', text: 'Healthy relationships are not defined by the absence of conflict but by the ability to repair. Research shows that securely attached couples experience just as many disagreements as insecurely attached ones — the difference is in how they repair.' },
+            { heading: 'All Relationships Have Ruptures', text: 'John Gottman\'s research at the Love Lab found that healthy relationships are not defined by the absence of conflict but by the ability to repair. Securely attached couples experience just as many disagreements as insecurely attached ones — the difference is in how quickly and effectively they repair. Gottman found that "masters" of relationships make repair attempts early and often, and their partners accept those attempts. "Disasters" either fail to attempt repair or reject their partner\'s attempts.' },
             { heading: 'A Repair Sequence', text: '1. Pause and regulate (use STOP). 2. Acknowledge the rupture ("I know that hurt"). 3. Take responsibility for your part. 4. Express the underlying need ("When we fight, my fear is... my need is..."). 5. Make a specific, actionable commitment.', keyIdeas: ['Repair builds trust over time', 'You can only repair your side', 'Repair is not about being right or wrong', 'Consistent repair is what creates earned security'] },
           ] } },
           { id: 'rs-interactive', type: 'interactive', title: 'Repair Template', estimatedMinutes: 10, content: { type: 'interactive', component: 'RepairBuilder', config: {}, instructions: 'Think of a recent conflict or rupture. Build a repair statement using the template.' } },
           { id: 'rs-journal', type: 'journal', title: 'Repair Reflections', estimatedMinutes: 5, content: { type: 'journal', prompts: ['When we fight, my deepest fear is...', 'What I really need in those moments is...', 'One repair attempt I could make this week is...'], privacyNote: 'Private.' } },
           { id: 'rs-quiz', type: 'quiz', title: 'Repair Check', estimatedMinutes: 3, content: { type: 'quiz', items: [{ question: 'Healthy relationships are defined by:', options: ['Never having conflict', 'The ability to repair after ruptures', 'Always agreeing', 'Avoiding difficult topics'], correctIndex: 1, explanation: 'Research consistently shows that the ability to repair, not the absence of conflict, defines healthy, secure relationships.' }] } },
+        ],
+      },
+      {
+        id: 'bids-for-connection',
+        moduleId: 'secure-relating',
+        title: 'Bids for Connection & Co-Regulation',
+        description: 'Learn Gottman\'s research on "bids" — the fundamental unit of emotional connection — and how co-regulation builds secure attachment.',
+        estimatedMinutes: 30,
+        learningObjectives: [
+          'Recognise bids for connection in everyday interactions',
+          'Understand turning toward, turning away, and turning against',
+          'Learn how co-regulation builds secure attachment',
+          'Practice recognising and responding to bids',
+        ],
+        prerequisites: ['repair-skills'],
+        contraindications: [],
+        segments: [
+          { id: 'bc-safety', type: 'safety-check', title: 'Check-In', estimatedMinutes: 2, content: { type: 'safety-check', question: 'How are you feeling?', options: [{ label: 'Calm and open', value: 1 }, { label: 'A little guarded', value: 3 }, { label: 'Somewhat activated', value: 5 }, { label: 'Distressed', value: 7 }, { label: 'Very distressed', value: 9 }] } },
+          { id: 'bc-psychoed', type: 'psychoeducation', title: 'Bids and Co-Regulation', estimatedMinutes: 8,
+            content: { type: 'psychoeducation', sections: [
+              { heading: 'What Are Bids for Connection?', text: 'John Gottman discovered that relationships are built and broken in tiny moments he calls "bids for connection." A bid is any attempt — verbal or non-verbal — to get your partner\'s attention, affection, affirmation, or connection. It can be as small as "Look at this sunset" or as direct as "I need a hug." Gottman\'s research found that in stable relationships, partners turn toward each other\'s bids 86% of the time. In relationships that fail, that number drops to 33%. The difference between relationship success and failure is not grand gestures — it is thousands of small moments of turning toward.' },
+              { heading: 'Three Responses to a Bid', text: 'Turning Toward: Engaging with the bid. "Oh wow, that is a beautiful sunset." This builds the "emotional bank account." Turning Away: Missing or ignoring the bid. Continuing to scroll your phone without looking up. This erodes connection through neglect. Turning Against: Rejecting the bid with hostility. "I am busy, stop bothering me." This actively damages trust. For those with anxious attachment, unrecognised bids can feel devastating — because each missed bid echoes the original experience of a caregiver not attuning to your needs.', keyIdeas: ['Most bids are subtle — they are easy to miss if you are not paying attention', 'Learning to recognise bids is a skill that dramatically improves relationships', 'You can also learn to make clearer bids yourself, rather than testing whether someone will notice', 'Couples who divorced missed bids 67% of the time; couples who stayed together caught them 86% of the time'] },
+              { heading: 'Co-Regulation: How We Calm Each Other', text: 'Before we can self-regulate, we must learn to co-regulate — to use another person\'s calm nervous system to soothe our own. This is what a parent does for an infant: holding, rocking, speaking softly. As adults, co-regulation still happens: through eye contact, synchronised breathing, gentle touch, and the felt sense of being with someone who is calm and present. Polyvagal theory explains that our nervous systems are constantly reading each other — a calm person can literally shift the physiology of a distressed person through their presence alone. Building a network of people with whom you can co-regulate is one of the most powerful things you can do for your attachment healing.' },
+            ] },
+          },
+          { id: 'bc-journal', type: 'journal', title: 'Your Bids and Connections', estimatedMinutes: 8,
+            content: { type: 'journal', prompts: [
+              'Think of a recent interaction with someone you care about. Can you identify any bids for connection — from either of you? Were they turned toward, away from, or against?',
+              'How do you typically make bids for connection? Are they clear and direct, or do you test and hint?',
+              'Who in your life helps you co-regulate? When you are with them, what happens to your nervous system?',
+              'What would change in your relationships if you turned toward bids 86% of the time?',
+            ], privacyNote: 'Your reflections are private.' },
+          },
+          { id: 'bc-action', type: 'action-plan', title: 'Practice Turning Toward', estimatedMinutes: 3, content: { type: 'action-plan', prompt: 'This week, you will intentionally practice turning toward bids:', options: [{ id: 'notice-bids', label: 'Notice and respond to 3 bids per day from someone you care about', description: 'Build awareness of the tiny moments that build connection' }, { id: 'clear-bids', label: 'Make 1 clear, direct bid for connection each day instead of hinting', description: 'Practice asking for what you need without testing' }, { id: 'co-regulate', label: 'Spend 10 minutes in calm, present connection with someone (no screens)', description: 'Practice co-regulation through simple presence' }], timeHorizonDays: 7 } },
+          { id: 'bc-quiz', type: 'quiz', title: 'Connection Check', estimatedMinutes: 3, content: { type: 'quiz', items: [
+            { question: 'In Gottman\'s research, couples who stayed together turned toward bids for connection:', options: ['50% of the time', '67% of the time', '86% of the time', '100% of the time'], correctIndex: 2, explanation: 'Gottman found that "masters" of relationships turned toward their partner\'s bids 86% of the time, while "disasters" only turned toward 33% of the time. The difference is not perfection — it is consistency.' },
+            { question: 'Co-regulation means:', options: ['Controlling another person\'s emotions', 'Using another person\'s calm presence to help soothe your own nervous system', 'Never needing to self-regulate', 'Being codependent'], correctIndex: 1, explanation: 'Co-regulation is the healthy, biological process of using another person\'s regulated nervous system to help calm your own. It is the foundation of secure attachment and is different from codependency because both people maintain their individual identity.' },
+          ] } },
         ],
       },
     ],
@@ -857,7 +1087,7 @@ export const modules: Module[] = [
     title: 'Integration & Relapse Prevention',
     description: 'Consolidate everything you have learned, build a maintenance plan, and prepare for challenges ahead.',
     icon: 'compass',
-    order: 12,
+    order: 13,
     category: 'integration',
     prerequisites: ['secure-relating'],
     sessions: [

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useAppStore } from '@/lib/store'
 import { useHydrated } from '@/lib/useHydration'
-import { ShieldIcon, HeartIcon, BrainIcon, AnchorIcon, CheckIcon, PhoneIcon, SparklesIcon } from '@/components/ui/Icons'
+import { ShieldIcon, HeartIcon, BrainIcon, AnchorIcon, CheckIcon, PhoneIcon, SparklesIcon, ReparentLogo, ReparentWordmark } from '@/components/ui/Icons'
 import { CrisisModal } from '@/components/safety/CrisisModal'
 import { QuickExit } from '@/components/safety/QuickExit'
 
@@ -24,6 +24,8 @@ const disclaimers = [
   'No EMDR or trauma processing is delivered through this app',
   'If you are in crisis, use the crisis support button',
   'Your journal data stays on your device by default',
+  'If you are currently working with a therapist, we encourage you to share this program with them',
+  'This program is not suitable for active psychosis, severe dissociative disorders, or acute suicidality — please seek professional support for these concerns',
 ]
 
 export default function LandingPage() {
@@ -43,9 +45,7 @@ export default function LandingPage() {
     return (
       <div className="min-h-screen bg-warmth-50 flex items-center justify-center">
         <div className="text-center animate-fade-in">
-          <div className="w-12 h-12 bg-brand-600 rounded-2xl flex items-center justify-center mx-auto">
-            <span className="text-white font-bold text-lg">R</span>
-          </div>
+          <ReparentLogo size={48} className="mx-auto" />
           <p className="mt-4 text-calm-500 text-sm">Loading...</p>
         </div>
       </div>
@@ -57,9 +57,7 @@ export default function LandingPage() {
     return (
       <div className="min-h-screen bg-warmth-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 bg-brand-600 rounded-2xl flex items-center justify-center mx-auto">
-            <span className="text-white font-bold text-lg">R</span>
-          </div>
+          <ReparentLogo size={48} className="mx-auto" />
           <p className="mt-4 text-calm-500 text-sm">Loading...</p>
         </div>
       </div>
@@ -75,10 +73,8 @@ export default function LandingPage() {
         <header className="bg-white/80 backdrop-blur border-b border-calm-100 sticky top-0 z-30">
           <div className="page-width py-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">R</span>
-              </div>
-              <span className="text-xl font-serif font-bold text-calm-900">Reparent</span>
+              <ReparentLogo size={32} />
+              <ReparentWordmark className="text-xl" />
             </div>
             <button
               onClick={() => useAppStore.getState().enterCrisisMode()}
@@ -94,9 +90,9 @@ export default function LandingPage() {
         <section className="page-width py-16 sm:py-24 text-center">
           <div className="max-w-3xl mx-auto animate-fade-in">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-calm-900 leading-tight">
-              Heal Your Attachment Patterns.
+              Healing Attachment.
               <br />
-              <span className="text-brand-600">At Your Own Pace.</span>
+              <span className="text-brand-600">Finding Home.</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-calm-600 max-w-2xl mx-auto leading-relaxed">
               An evidence-based learning program that teaches skills from attachment science,

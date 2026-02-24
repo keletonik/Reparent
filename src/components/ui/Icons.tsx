@@ -7,6 +7,52 @@ interface IconProps {
   size?: number
 }
 
+// Reparent brand logo — intertwined spiral circles (warm tan + sage green)
+export function ReparentLogo({ size = 40, className = '' }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {/* Outer warm arc (tan/gold) — spirals from bottom-left up and around */}
+      <path
+        d="M 35 85 A 38 38 0 1 1 75 32"
+        stroke="#c4a574"
+        strokeWidth="4"
+        strokeLinecap="round"
+        fill="none"
+      />
+      {/* Inner/upper sage green arc — completes the outer circle and curves inward */}
+      <path
+        d="M 75 32 A 32 32 0 1 1 38 72"
+        stroke="#85a88a"
+        strokeWidth="4"
+        strokeLinecap="round"
+        fill="none"
+      />
+      {/* Inner warm spiral arc — continues inward toward center */}
+      <path
+        d="M 38 72 A 22 22 0 1 1 62 42"
+        stroke="#c4a574"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+      {/* Center circle ring */}
+      <circle cx="50" cy="50" r="8" stroke="#6b5e4b" strokeWidth="2.5" fill="none" />
+      {/* Center dot */}
+      <circle cx="50" cy="50" r="2.5" fill="#85a88a" />
+    </svg>
+  )
+}
+
+// Wordmark: "reparent" with "re" in muted tone, "parent" in warm tone
+export function ReparentWordmark({ className = '' }: { className?: string }) {
+  return (
+    <span className={`font-serif font-bold tracking-tight ${className}`}>
+      <span className="text-calm-400">re</span>
+      <span className="text-calm-800">parent</span>
+    </span>
+  )
+}
+
 export function ShieldIcon({ className = '', size = 24 }: IconProps) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -264,6 +310,17 @@ export function SettingsIcon({ className = '', size = 24 }: IconProps) {
   )
 }
 
+export function UsersIcon({ className = '', size = 24 }: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </svg>
+  )
+}
+
 const iconMap: Record<string, React.FC<IconProps>> = {
   shield: ShieldIcon,
   heart: HeartIcon,
@@ -281,6 +338,7 @@ const iconMap: Record<string, React.FC<IconProps>> = {
   flame: FlameIcon,
   trophy: TrophyIcon,
   sparkles: SparklesIcon,
+  users: UsersIcon,
 }
 
 export function ModuleIcon({ icon, className, size }: { icon: string } & IconProps) {

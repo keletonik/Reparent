@@ -12,11 +12,13 @@ export default function SettingsPage() {
   const [showResetConfirm, setShowResetConfirm] = useState(false)
   const [resetText, setResetText] = useState('')
 
+  const consent = progress.consentGiven || { accountCreation: false, journalStorage: false, analytics: false, dateGiven: '' }
+
   const handleConsentToggle = (key: 'journalStorage' | 'analytics', value: boolean) => {
     setConsent({
-      ...progress.consentGiven,
+      ...consent,
       [key]: value,
-      dateGiven: progress.consentGiven.dateGiven,
+      dateGiven: consent.dateGiven,
     })
   }
 
@@ -45,7 +47,7 @@ export default function SettingsPage() {
           <label className="flex items-start gap-3 p-4 rounded-xl border border-calm-200 cursor-pointer hover:bg-calm-50">
             <input
               type="checkbox"
-              checked={progress.consentGiven.journalStorage}
+              checked={consent.journalStorage}
               onChange={(e) => handleConsentToggle('journalStorage', e.target.checked)}
               className="mt-1 w-5 h-5 rounded border-calm-300 text-brand-600 focus:ring-brand-500"
             />
@@ -61,7 +63,7 @@ export default function SettingsPage() {
           <label className="flex items-start gap-3 p-4 rounded-xl border border-calm-200 cursor-pointer hover:bg-calm-50">
             <input
               type="checkbox"
-              checked={progress.consentGiven.analytics}
+              checked={consent.analytics}
               onChange={(e) => handleConsentToggle('analytics', e.target.checked)}
               className="mt-1 w-5 h-5 rounded border-calm-300 text-brand-600 focus:ring-brand-500"
             />

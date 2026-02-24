@@ -120,11 +120,11 @@ export const useAppStore = create<AppState>()(
               category: 'milestone',
             })
           }
-          if (milestoneCount === 12) {
+          if (milestoneCount === 13) {
             newBadges.push({
               id: `module-complete`,
               title: 'Journey Complete',
-              description: 'Completed all 12 core modules',
+              description: 'Completed all 13 core modules',
               icon: 'trophy',
               earnedDate: new Date().toISOString(),
               category: 'milestone',
