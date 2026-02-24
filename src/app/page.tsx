@@ -77,9 +77,6 @@ export default function LandingPage() {
               <ReparentWordmark className="text-xl" />
             </div>
             <div className="flex items-center gap-3">
-              <Link href="/login" className="btn-ghost text-sm">
-                Log In
-              </Link>
               <Link href="/signup" className="btn-primary text-sm py-2">
                 Sign Up
               </Link>
