@@ -51,8 +51,8 @@ export default function VerifyEmailPage() {
       sessionStorage.removeItem('verify-email')
       sessionStorage.removeItem('verify-code')
 
-      // Redirect to login after 2 seconds
-      setTimeout(() => router.push('/login'), 2000)
+      // Redirect to dashboard after 2 seconds
+      setTimeout(() => router.push('/dashboard'), 2000)
     } catch {
       setError('Network error. Please try again.')
       setLoading(false)
@@ -85,7 +85,7 @@ export default function VerifyEmailPage() {
               </div>
               <h2 className="mt-4 text-xl font-semibold text-calm-900">Email Verified!</h2>
               <p className="mt-2 text-calm-600 text-sm">
-                Redirecting you to the login page...
+                Redirecting you to the dashboard...
               </p>
             </div>
           ) : (
