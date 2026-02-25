@@ -169,13 +169,26 @@ function ModuleList() {
   )
 }
 
+function getGreeting() {
+  const hour = new Date().getHours()
+  if (hour < 12) return 'Good Morning'
+  if (hour < 17) return 'Good Afternoon'
+  return 'Good Evening'
+}
+
 export default function DashboardPage() {
   const goals = useAppStore((s) => s.progress.goals)
+  const { currentStreak } = useAppStore((s) => s.progress)
 
   return (
     <div className="page-width py-6 sm:py-8 space-y-8">
       <div>
-        <h1 className="text-3xl font-serif font-bold text-calm-900">Welcome Back</h1>
+        <h1 className="text-3xl font-serif font-bold text-calm-900">{getGreeting()}</h1>
+        {currentStreak > 0 && (
+          <p className="mt-1 text-brand-600 text-sm font-medium">
+            {currentStreak} day streak &mdash; keep going!
+          </p>
+        )}
         {goals.length > 0 && (
           <p className="mt-1 text-calm-600">
             Working on: {goals.slice(0, 2).join(', ')}{goals.length > 2 ? ` +${goals.length - 2} more` : ''}

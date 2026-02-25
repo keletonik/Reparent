@@ -76,7 +76,7 @@ export function MobileNav() {
               key={href}
               href={href}
               className={cn(
-                'flex flex-col items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium transition-colors min-w-0',
+                'flex flex-col items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium transition-colors min-w-0 relative',
                 isActive
                   ? 'text-brand-600'
                   : 'text-calm-400 hover:text-calm-600'
@@ -85,6 +85,9 @@ export function MobileNav() {
             >
               <Icon size={20} />
               <span className="truncate">{label}</span>
+              {isActive && (
+                <span className="absolute -top-0.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-brand-500 rounded-full" />
+              )}
             </Link>
           )
         })}
