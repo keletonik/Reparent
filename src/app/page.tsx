@@ -89,8 +89,14 @@ export default function LandingPage() {
         </header>
 
         {/* Hero */}
-        <section className="page-width py-16 sm:py-24 text-center">
-          <div className="max-w-3xl mx-auto animate-fade-in">
+        <section className="page-width py-16 sm:py-24 text-center relative overflow-hidden">
+          {/* Subtle breathing circle background */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] breathing-circle opacity-30 pointer-events-none" aria-hidden="true" />
+          <div className="max-w-3xl mx-auto animate-fade-in relative">
+            <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-brand-50 border border-brand-100 rounded-full">
+              <span className="w-2 h-2 bg-brand-500 rounded-full animate-pulse-gentle" />
+              <span className="text-sm text-brand-700 font-medium">Evidence-Based &middot; Trauma-Informed &middot; Private by Default</span>
+            </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-calm-900 leading-tight">
               Healing Attachment.
               <br />
@@ -163,17 +169,28 @@ export default function LandingPage() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-calm-100 mt-12">
-          <div className="page-width py-8 text-center">
-            <p className="text-sm text-calm-400">
+        <footer className="border-t border-calm-100 mt-12 bg-white/50">
+          <div className="page-width py-8">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <ReparentLogo size={20} />
+                <span className="text-sm font-medium text-calm-700">Reparent</span>
+              </div>
+              <div className="flex items-center gap-6 text-sm">
+                <Link href="/resources" className="text-calm-500 hover:text-brand-600 transition-colors">Resources</Link>
+                <Link href="/safety-plan" className="text-calm-500 hover:text-brand-600 transition-colors">Safety Plan</Link>
+                <button
+                  onClick={() => useAppStore.getState().enterCrisisMode()}
+                  className="text-safety-600 hover:text-safety-700 transition-colors font-medium"
+                >
+                  Crisis Help
+                </button>
+              </div>
+            </div>
+            <p className="mt-4 text-xs text-calm-400 text-center sm:text-left">
               Reparent is an educational program grounded in attachment theory, CBT, DBT,
               and trauma-informed care. It is not a medical device, diagnostic tool, or therapy platform.
             </p>
-            <div className="mt-4 flex items-center justify-center gap-4 text-sm">
-              <Link href="/resources" className="text-calm-500 hover:text-calm-700">Resources</Link>
-              <span className="text-calm-300">|</span>
-              <Link href="/safety-plan" className="text-calm-500 hover:text-calm-700">Safety Plan</Link>
-            </div>
           </div>
         </footer>
       </div>
