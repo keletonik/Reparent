@@ -1,14 +1,13 @@
 'use client'
 
-import { use } from 'react'
 import Link from 'next/link'
 import { useAppStore } from '@/lib/store'
 import { getModuleById, isSessionUnlocked } from '@/lib/modules-data'
 import { ModuleIcon, CheckIcon, LockIcon, ChevronRightIcon, ArrowLeftIcon } from '@/components/ui/Icons'
 import { cn } from '@/lib/utils'
 
-export default function ModuleDetailPage({ params }: { params: Promise<{ moduleId: string }> }) {
-  const { moduleId } = use(params)
+export default function ModuleDetailPage({ params }: { params: { moduleId: string } }) {
+  const { moduleId } = params
   const mod = getModuleById(moduleId)
   const { completedSessions } = useAppStore((s) => s.progress)
 
