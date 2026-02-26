@@ -339,6 +339,11 @@ const iconMap: Record<string, React.FC<IconProps>> = {
   trophy: TrophyIcon,
   sparkles: SparklesIcon,
   users: UsersIcon,
+  // Aliases for modules using alternate icon names
+  hand: AnchorIcon,
+  palette: FlowerIcon,
+  lightbulb: SparklesIcon,
+  link: UnlinkIcon,
 }
 
 export function ModuleIcon({ icon, className, size }: { icon: string } & IconProps) {
