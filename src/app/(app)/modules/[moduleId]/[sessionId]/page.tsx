@@ -1,11 +1,11 @@
 'use client'
 
-import { useState, use } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useAppStore } from '@/lib/store'
 import { getSessionById, getModuleById, getNextSession } from '@/lib/modules-data'
-import type { Badge } from '@/lib/types'
+import type { Badge, Segment } from '@/lib/types'
 import { ArrowLeftIcon, ChevronRightIcon, ChevronLeftIcon, CheckIcon } from '@/components/ui/Icons'
 import { SafetyCheckSegment } from '@/components/learning/SafetyCheckSegment'
 import { PsychoeducationSegment } from '@/components/learning/PsychoeducationSegment'
@@ -15,7 +15,6 @@ import { BreathingSegment } from '@/components/learning/BreathingSegment'
 import { ActionPlanSegment } from '@/components/learning/ActionPlanSegment'
 import { InteractiveSegment } from '@/components/learning/InteractiveSegment'
 import { ReflectionSegment } from '@/components/learning/ReflectionSegment'
-import type { Segment } from '@/lib/types'
 
 function SegmentRenderer({ segment, onComplete }: { segment: Segment; onComplete: () => void }) {
   switch (segment.type) {
@@ -48,9 +47,9 @@ function SegmentRenderer({ segment, onComplete }: { segment: Segment; onComplete
 export default function SessionPlayerPage({
   params,
 }: {
-  params: Promise<{ moduleId: string; sessionId: string }>
+  params: { moduleId: string; sessionId: string }
 }) {
-  const { moduleId, sessionId } = use(params)
+  const { moduleId, sessionId } = params
   const router = useRouter()
   const session = getSessionById(moduleId, sessionId)
   const mod = getModuleById(moduleId)
