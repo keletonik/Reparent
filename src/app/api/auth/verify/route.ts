@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getUserByEmail, updateUser } from '@/lib/users-db'
+import { createToken } from '@/lib/auth'
 
 export async function POST(req: NextRequest) {
   try {
@@ -34,11 +35,28 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    updateUser(user.id, { verified: true })
+    updateUser(user.id, { verified: true, lastLogin: new Date().toISOString() })
 
-    return NextResponse.json({
-      message: 'Email verified successfully. You can now log in.',
+    const token = createToken({
+      userId: user.id,
+      email: user.email,
+      firstName: user.firstName,
+      lastName: user.lastName,
     })
+
+    const response = NextResponse.json({
+      message: 'Email verified successfully.',
+    })
+
+    response.cookies.set('auth-token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 7 * 24 * 60 * 60,
+      path: '/',
+    })
+
+    return response
   } catch {
     return NextResponse.json(
       { error: 'An error occurred during verification' },
