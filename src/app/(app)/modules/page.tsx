@@ -12,6 +12,7 @@ const categoryLabels: Record<string, string> = {
   skills: 'Skills Building',
   growth: 'Growth & Connection',
   integration: 'Integration',
+  relationships: 'Relationships — 3% Man',
 }
 
 const categoryColors: Record<string, string> = {
@@ -19,6 +20,7 @@ const categoryColors: Record<string, string> = {
   skills: 'bg-brand-100 text-brand-700',
   growth: 'bg-warmth-100 text-warmth-700',
   integration: 'bg-brand-100 text-brand-700',
+  relationships: 'bg-warmth-100 text-warmth-700',
 }
 
 export default function ModulesPage() {

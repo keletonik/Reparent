@@ -2,12 +2,13 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { HomeIcon, BookOpenIcon, PenIcon, BarChartIcon, SettingsIcon, ReparentLogo, ReparentWordmark } from '@/components/ui/Icons'
+import { HomeIcon, BookOpenIcon, PenIcon, BarChartIcon, SettingsIcon, CompassIcon, ReparentLogo, ReparentWordmark } from '@/components/ui/Icons'
 import { cn } from '@/lib/utils'
 
 const navItems = [
   { href: '/dashboard', label: 'Home', icon: HomeIcon },
   { href: '/modules', label: 'Modules', icon: BookOpenIcon },
+  { href: '/three-percent-man', label: '3% Man', icon: CompassIcon },
   { href: '/journal', label: 'Journal', icon: PenIcon },
   { href: '/progress', label: 'Progress', icon: BarChartIcon },
   { href: '/settings', label: 'Settings', icon: SettingsIcon },
@@ -69,7 +70,7 @@ export function MobileNav() {
   return (
     <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-calm-100 z-40" aria-label="Mobile navigation">
       <div className="flex items-center justify-around px-2 py-2">
-        {navItems.slice(0, 4).map(({ href, label, icon: Icon }) => {
+        {navItems.slice(0, 5).map(({ href, label, icon: Icon }) => {
           const isActive = pathname === href || pathname.startsWith(href + '/')
           return (
             <Link

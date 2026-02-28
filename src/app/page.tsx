@@ -8,6 +8,7 @@ import { useHydrated } from '@/lib/useHydration'
 import { ShieldIcon, HeartIcon, BrainIcon, AnchorIcon, CheckIcon, PhoneIcon, SparklesIcon, ReparentLogo, ReparentWordmark } from '@/components/ui/Icons'
 import { CrisisModal } from '@/components/safety/CrisisModal'
 import { QuickExit } from '@/components/safety/QuickExit'
+import { TherapeuticChat } from '@/components/chat/TherapeuticChat'
 
 const features = [
   { icon: ShieldIcon, title: 'Safety First', description: 'Built-in crisis resources, grounding tools, and quick exit. Your safety is never behind a paywall.' },
@@ -68,6 +69,7 @@ export default function LandingPage() {
     <>
       <QuickExit />
       <CrisisModal />
+      <TherapeuticChat />
       <div className="min-h-screen bg-warmth-50">
         {/* Header */}
         <header className="bg-white/80 backdrop-blur border-b border-calm-100 sticky top-0 z-30">

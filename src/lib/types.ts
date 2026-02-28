@@ -6,7 +6,7 @@ export interface Module {
   sessions: Session[]
   prerequisites: string[]
   order: number
-  category: 'foundation' | 'skills' | 'growth' | 'integration'
+  category: 'foundation' | 'skills' | 'growth' | 'integration' | 'relationships'
 }
 
 export interface Session {

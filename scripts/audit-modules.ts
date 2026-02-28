@@ -102,7 +102,7 @@ for (const mod of modules) {
         if ((segment.content as { type: string }).type !== segment.type) {
           error(`Segment ${segment.id}: content.type '${(segment.content as { type: string }).type}' != segment type '${segment.type}'`)
         }
-        validateContent(segment)
+        validateContent(segment as { id: string; type: string; content: unknown })
       }
 
       // Unique segment IDs (scoped to session)
@@ -130,7 +130,7 @@ for (const mod of modules) {
 }
 
 // ── Check order numbers are sequential (1..N) ──
-const orders = [...moduleOrders].sort((a, b) => a - b)
+const orders = Array.from(moduleOrders).sort((a, b) => a - b)
 for (let i = 0; i < orders.length; i++) {
   if (orders[i] !== i + 1) {
     error(`Module order gap: expected ${i + 1} at position ${i}, got ${orders[i]}`)
@@ -168,7 +168,7 @@ if (modules.length > 0) {
 }
 
 // ── Content validation per type ──
-function validateContent(segment: { id: string; type: string; content: Record<string, unknown> }) {
+function validateContent(segment: { id: string; type: string; content: unknown }) {
   const { content, type, id } = segment
   switch (type) {
     case 'safety-check': {

@@ -321,6 +321,15 @@ export function UsersIcon({ className = '', size = 24 }: IconProps) {
   )
 }
 
+export function BookStudyIcon({ className = '', size = 24 }: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/>
+      <path d="m9 10 2 2 4-4"/>
+    </svg>
+  )
+}
+
 const iconMap: Record<string, React.FC<IconProps>> = {
   shield: ShieldIcon,
   heart: HeartIcon,
@@ -339,8 +348,10 @@ const iconMap: Record<string, React.FC<IconProps>> = {
   trophy: TrophyIcon,
   sparkles: SparklesIcon,
   users: UsersIcon,
+  'book-study': BookStudyIcon,
   // Aliases for modules using alternate icon names
   hand: AnchorIcon,
+  'heart-handshake': HandshakeIcon,
   palette: FlowerIcon,
   lightbulb: SparklesIcon,
   link: UnlinkIcon,
